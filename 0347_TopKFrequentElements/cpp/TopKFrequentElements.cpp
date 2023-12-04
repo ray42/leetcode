@@ -1,4 +1,6 @@
 /*
+MEDIUM: https://leetcode.com/problems/top-k-frequent-elements/
+
 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
 Example 1:
@@ -26,34 +28,36 @@ Follow up: Your algorithm's time complexity must be better than O(n log n), wher
 #include <unordered_map>
 #include <map>
 #include <sstream>
+#include <algorithm>
+#include <ranges>
 
-std::vector<int> topKFrequent(const std::vector<int>& nums, int k) {
+std::vector<int> topKFrequent(const std::vector<int>& nums, int k) 
+{
     // 1) Count the frequency per elements, store this in an unordered_map where key = the number, val = frequency
-    // 2) insert into a map where the frequency is key, key = value
-    // 3) Loop backwards through the map for the first k elements.
-    auto um = std::unordered_map<int,int>{};
+    // 2) Insert this map into a vector of pairs. The pairs should be unique because the key of the map is unique.
+    // 3) Sort this vector using the second of the pair.
+    auto numberToFrequency = std::unordered_map<int,int>{};
     for(const auto& i : nums)
     {
-        um[i]++;
+        numberToFrequency[i]++;
     }
 
-    auto map = std::map<int,int>{};
-    for(const auto& [num, frequency] : um)
+    //using PairType = decltype(numberToFrequency)::value_type;
+    using PairType = std::pair<int,int>;
+
+    auto vecValFreq = std::vector<PairType>{numberToFrequency.begin(), numberToFrequency.end()};
+
+    std::ranges::sort(vecValFreq, [](const PairType& left, const PairType& right)
     {
-        map.emplace(frequency,num);
-    }
+        return left.second > right.second;
+    });
 
-    int i = 0;
     auto ret = std::vector<int>{};
-    for(auto it = map.rbegin(); it != map.rend(); ++it)
+    //for(auto i : std::ranges::views::iota(0,k)) // Leetcode doesn't seem to support ranges::views yet...
+    for(auto i = 0; i < k; ++i)
     {
-        if(i == k) break;
-
-        ret.push_back(it->second);
-
-        ++i;
+        ret.push_back(vecValFreq[i].first);
     }
-
     return ret;
  }
 
