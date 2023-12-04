@@ -1,8 +1,3 @@
-#include <iostream>
-#include <vector>
-#include <unordered_map>
-#include <map>
-#include <sstream>
 /*
 Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
 
@@ -25,6 +20,12 @@ Constraints:
 
 Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 */
+
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <map>
+#include <sstream>
 
 std::vector<int> topKFrequent(const std::vector<int>& nums, int k) {
     // 1) Count the frequency per elements, store this in an unordered_map where key = the number, val = frequency
