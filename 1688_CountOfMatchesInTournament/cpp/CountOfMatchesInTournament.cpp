@@ -68,7 +68,7 @@ n-1 teams needs to be eliminated: hence n-1 matches.
 
 class Solution {
 public:
-    auto numberOfMatches(int n) -> int
+    auto numberOfMatches(const int& n) -> int
     {
         return n-1;
     }
