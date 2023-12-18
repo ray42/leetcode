@@ -58,8 +58,14 @@ Constraints:
 #include <map>
 #include <memory>
 
+// NOTE: This is actually too slow. The faster solution keeps the ratings in sorted order, 
+// That is, when changing the rating, we delete from m_foodToRatings and re-insert it.
+// In my current solution, at worst case, this is linear: for(const auto& [food, rating] : m_foodToRatings[cuisine])
+// But insertion and deletion from a set is log n
+// Anyway, I definitely need to re-do this.
 class FoodRatings {
 public:
+
     FoodRatings(std::vector<std::string>& foods, std::vector<std::string>& cuisines, std::vector<int>& ratings) 
     {
         for(auto i = 0; i < foods.size(); ++i)
