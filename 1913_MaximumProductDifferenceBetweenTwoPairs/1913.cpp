@@ -38,43 +38,27 @@ we do the same for the smallest
 
 */
 #include <vector>
-
 #include <algorithm> 
-
 class Solution 
-
 {
-
 public:
-
     int maxProductDifference(std::vector<int>& nums) 
-
     {
-
-        //auto firstFour = std::vector<int>(nums.begin(), nums.begin() + 4);
-
         std::ranges::sort(nums.begin(), nums.begin() + 4);
 
         auto smallest = nums[0];
-
         auto secondSmallest = nums[1];
-
         auto secondLargest = nums[2];
-
         auto largest = nums[3];
 
-
-
         for(auto i = 4; i < nums.size(); ++i)
-
         {
-
             if(nums[i] < smallest)
             {
                 secondSmallest = smallest;
                 smallest = nums[i];
             }
-            else if(nums[i] < secondSmallest)
+            else if(nums[i] < secondSmallest) // Need this for inputs such as [5,6,2,7,4]
             {
                 secondSmallest = nums[i];
             }
