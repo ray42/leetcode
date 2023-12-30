@@ -26,6 +26,15 @@ Constraints:
 Follow up: Can you solve the problem in O(1) extra space complexity? (The output array does not count as extra space for space complexity analysis.)
 
 */
+#include <vector>
+
+class Solution {
+public:
+    auto productExceptSelf(const std::vector<int>& nums) -> std::vector<int>
+    {
+        
+    }
+};
 
 auto main(int argc, char*argv[])->int
 {
