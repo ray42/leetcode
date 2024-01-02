@@ -128,6 +128,8 @@ Single Pass Approach
 */
 
 #include <vector>
+#include <array>
+
 class Solution {
 public:
     auto isValidSudoku(const std::vector<std::vector<char>>& board) -> bool
@@ -164,6 +166,81 @@ public:
         return true;
     }
 };
+
+
+
+
+
+
+// Re-trying. If I want to re-try again, then use this one
+class SolutionRetry {
+public:
+    auto isValidSudoku(const std::vector<std::vector<char>>& board) -> bool
+    {
+        // So really, we need to check each row if there are dupes
+        //                                  column if there are dupes
+        //                                  subgrid if there are dupes
+
+        // We can use a 2D array for each of the above.
+        auto rowSeen = std::array<std::array<bool,9>,9>{};
+        auto colSeen = std::array<std::array<bool,9>,9>{};
+        auto gridSeen = std::array<std::array<bool,9>,9>{};
+
+        // Now loop through the grid and check if any values have seen doubly
+        for(auto rowi = 0; rowi < board.size(); ++rowi)
+        {
+            for(auto colj = 0; colj < board[0].size(); ++colj)
+            {
+                if(board[rowi][colj] != '.')
+                {
+                    // Which number are we trying to check for dupes?
+                    auto num = board[rowi][colj] - '1'; // This will make it 0 based.
+
+                    // How do we index the subgrid?
+                    auto gridk = (rowi/3)*3 + colj/3;
+
+                    if(rowSeen[rowi][num] || colSeen[colj][num] || gridSeen[gridk][num])
+                    {
+                        return false;
+                    }
+
+                    rowSeen[rowi][num] = true;
+                    colSeen[colj][num] = true;
+                    gridSeen[gridk][num] = true;
+                }
+            }
+        }
+
+        return true;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 auto main(int argc, char * argv[]) -> int
 {
