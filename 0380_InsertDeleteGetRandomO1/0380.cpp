@@ -80,10 +80,10 @@ public:
     
     int getRandom() 
     {
-        srand(std::time(nullptr));
+        //srand(std::time(nullptr));
         
-        auto iii = rand() % vals.size();
-        auto jjj = vals[rand() % vals.size()];
+        //auto iii = rand() % vals.size();
+        //auto jjj = vals[rand() % vals.size()];
         return vals[rand() % vals.size()];
     }
 
