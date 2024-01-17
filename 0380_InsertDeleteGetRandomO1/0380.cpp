@@ -43,6 +43,8 @@ Constraints:
 */
 
 #include <unordered_set>
+#include <unordered_map>
+#include <ctime>
 
 class RandomizedSet {
 public:
@@ -53,14 +55,24 @@ public:
     
     bool insert(int val) 
     {
-        return set.emplace(val).second;
+        if(auto it = map.find(val); it == map.end())
+        {
+            vals.push_back(val);
+            map[val] = vals.size()-1;
+            return true;
+        }
+        return false;
     }
     
     bool remove(int val) 
     {
-        if(auto it = set.find(val); it != set.end())
+        if(auto it = map.find(val); it != map.end())
         {
-            set.erase(it);
+            // Get the val and swap with end.
+            vals[it->second] = vals.back();
+            map[vals.back()] = it->second; // Update the index since we have moved the back of the vector into where val is.
+            vals.pop_back();
+            map.erase(it);
             return true;
         }
         return false;
@@ -68,19 +80,32 @@ public:
     
     int getRandom() 
     {
-        return *set.begin();
+        srand(std::time(nullptr));
+        
+        auto iii = rand() % vals.size();
+        auto jjj = vals[rand() % vals.size()];
+        return vals[rand() % vals.size()];
     }
 
-    std::unordered_set<int> set{};
-
 private:
+
+    std::unordered_map<int,int> map{};
+    std::vector<int> vals{};
 };
 
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * RandomizedSet* obj = new RandomizedSet();
- * bool param_1 = obj->insert(val);
- * bool param_2 = obj->remove(val);
- * int param_3 = obj->getRandom();
- */
+auto main(int argc, char* argv[]) -> int
+{
+    auto randomizedSet = RandomizedSet{};
+    randomizedSet.insert(0);
+    randomizedSet.insert(1);
+    randomizedSet.remove(0);
+    randomizedSet.insert(2);
+    randomizedSet.remove(1);
+    auto i0 = randomizedSet.getRandom();
+    auto ffsd = 2121;
+    //auto i1 = randomizedSet.getRandom();
+    //auto i2 = randomizedSet.getRandom();
+    //auto i3 = randomizedSet.getRandom();
+    //auto i4 = randomizedSet.getRandom();
+}
 
