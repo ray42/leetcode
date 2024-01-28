@@ -10,14 +10,15 @@ def setupLeetCode(dirname):
     if not dirname:
         return
     
+    print("Current Dir is " + currentDir)
     os.chdir(currentDir)
-    
+
     if os.path.exists(dirname):
         print(dirname, ' exists')
     else:
         os.mkdir(dirname)
 
-    os.chdir(dirname);
+    os.chdir(dirname)
 
     filename = dirname[0:4] + '.cpp'
     if not os.path.exists(filename):
@@ -32,7 +33,9 @@ def setupMultipleLeetCode(listFileName):
 
 def main():
     name = sys.argv[1]
+    global currentDir 
     currentDir = os. getcwd()
+
     if(name == "list.txt"):
         setupMultipleLeetCode(name)
     else:
