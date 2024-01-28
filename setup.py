@@ -2,9 +2,16 @@ import sys
 import os
 
 
+currentDir = ""
 
 
 def setupLeetCode(dirname):
+    # If dirname is empty, just return
+    if not dirname:
+        return
+    
+    os.chdir(currentDir)
+    
     if os.path.exists(dirname):
         print(dirname, ' exists')
     else:
@@ -25,6 +32,7 @@ def setupMultipleLeetCode(listFileName):
 
 def main():
     name = sys.argv[1]
+    currentDir = os. getcwd()
     if(name == "list.txt"):
         setupMultipleLeetCode(name)
     else:
