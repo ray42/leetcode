@@ -10,7 +10,6 @@ def setupLeetCode(dirname):
     if not dirname:
         return
     
-    print("Current Dir is " + currentDir)
     os.chdir(currentDir)
 
     if os.path.exists(dirname):
