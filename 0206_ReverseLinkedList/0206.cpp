@@ -1,13 +1,15 @@
 /*
 Easy: https://leetcode.com/problems/reverse-linked-list/description/
 
+Visualising the input and output:
+
+Input:
 1,2,3
 val=1,next=2
 val=2,next=3
 val=3,next=null
 
-val1, next=null
-
+Output:
 3,2,1
 val=3,next=2
 val=2,next=1,
@@ -24,7 +26,7 @@ struct ListNode
 class Solution {
 public:
     using PtrListNode = ListNode *;
-    auto reverseList(ListNode* head) -> ListNode*
+    auto reverseList(ListNode* head) -> PtrListNode
     {
         auto prev = PtrListNode{nullptr};
         auto current = head;
@@ -39,6 +41,55 @@ public:
     }
 };
 
+
+/*
+Visualising the input and output:
+
+Input:
+1,2,3
+val=1,next=2
+val=2,next=3
+val=3,next=null
+
+Output:
+3,2,1
+val=3,next=2
+val=2,next=1,
+val=1,next=null
+*/
+// Recursive solution
+class SolutionRecursion
+{
+public:
+    using PtrListNode = ListNode *;
+    auto reverseList(ListNode* head) -> PtrListNode
+    {
+        if(!head)
+        {
+            return head;
+        }
+
+        return reverseList(nullptr, head);
+    }
+
+private:
+
+    auto reverseList(PtrListNode prev, PtrListNode current) -> PtrListNode
+    {
+        if(current == nullptr)
+        {
+            // prev is the new head
+            return prev;
+        }
+
+        auto head = reverseList(current, current->next);
+        current->next = prev;
+
+        return head;
+    }
+};
+
+
 auto main(int argc, char* argv[])->int
 {
     auto l1 = ListNode{1};
@@ -46,7 +97,7 @@ auto main(int argc, char* argv[])->int
     auto l3 = ListNode{3};
     l1.next = &l2;
     l2.next = &l3;
-    Solution{}.reverseList(&l1);
+    SolutionRecursion{}.reverseList(&l1);
     auto iii = 42;
     return 0;
 }
