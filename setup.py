@@ -5,11 +5,23 @@ import os
 currentDir = ""
 
 
+# dirname is something like 0279_PerfectSquares
 def setupLeetCode(dirname):
     # If dirname is empty, just return
     if not dirname:
         return
     
+    # Check for incorrect directory name.
+    # The directory name has to contain at least
+    # '1234_x'
+    if len(dirname) < 6:
+        print(dirname, ' is less than length 6')
+        return
+    
+    if dirname[4] != '_':
+        print(dirname, ' must start with e.g. 1234_')
+        return
+
     os.chdir(currentDir)
 
     if os.path.exists(dirname):
@@ -24,6 +36,8 @@ def setupLeetCode(dirname):
         open(filename, 'a').close()
     else:
         print(filename, ' exists')
+    
+    return
 
 def setupMultipleLeetCode(listFileName):
     with open(listFileName) as file:
