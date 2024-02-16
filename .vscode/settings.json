@@ -67,6 +67,10 @@
         "ranges": "cpp",
         "span": "cpp",
         "set": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "bitset": "cpp",
+        "deque": "cpp",
+        "functional": "cpp",
+        "stack": "cpp"
     }
 }
