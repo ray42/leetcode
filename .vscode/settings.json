@@ -71,6 +71,7 @@
         "bitset": "cpp",
         "deque": "cpp",
         "functional": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "queue": "cpp"
     }
 }
