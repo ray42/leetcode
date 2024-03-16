@@ -41,6 +41,19 @@ See solution2 below
 #include <vector>
 #include <type_traits>
 
+
+
+class SolutionTemp {
+public:
+    auto productExceptSelf(std::vector<int>& nums) -> std::vector<int>
+    {
+        
+    }
+};
+
+
+
+
 class Solution {
 public:
     auto productExceptSelf(const std::vector<int>& nums) -> std::vector<int>
