@@ -59,6 +59,16 @@ public:
     }
 };
 
+
+class Solution2 {
+public:
+    auto twoSum(const std::vector<int>& nums, int target) -> std::vector<int>
+    {
+        //auto complements = 
+
+    }
+};
+
 auto main(int argc, char* argv[]) -> int
 {
     
