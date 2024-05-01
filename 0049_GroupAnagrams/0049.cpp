@@ -28,6 +28,37 @@ std::vector<std::vector<std::string>> groupAnagrams(const std::vector<std::strin
     return ret;
 }
 
+
+
+
+
+
+
+
+
+
+class Solution {
+public:
+    auto groupAnagrams(std::vector<std::string>& strs) -> std::vector<std::vector<std::string>>
+    {
+        return {};
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
     std::cout << "test" << std::endl;

@@ -35,6 +35,7 @@ So what we can do is, for each nums[i], we calculate the composite: target = num
 #include <vector>
 #include <unordered_map>
 #include <type_traits>
+#include <ranges>
 
 class Solution {
 public:
@@ -62,15 +63,37 @@ public:
 
 class Solution2 {
 public:
+    // You may assume that each input would have exactly one solution, and you may not use the same element twice.
+    // The "you may not use the same element twice" is important because, say, if the target is 10, and we have 5 and 5 in the list
+    // but at different indices, say 3 and 7, we have to return [3,7] (or [])
     auto twoSum(const std::vector<int>& nums, int target) -> std::vector<int>
     {
-        //auto complements = 
+        // Store a map of values to indices, where the values are the complements of some number in nums minus the target.
+        // The value is the index of the number because we are required to return the index.
+        auto complements = std::unordered_map<std::remove_cvref_t<decltype(nums)>::value_type,int>{};
 
+        // The logic: For each value in nums, we try to find it's complement in complements.
+        // If the complement does not exist in complements, then it means that this value 
+        // could be a complement for some other value so we put it in the complements map.
+        //for(const auto& [index, value] : std::views::enumerate(nums)) // This is in C++23 only.
+        for(auto index = 0; index < nums.size(); ++index)
+        {
+            const auto& value = nums[index];
+
+            const auto complement = target - value;
+            if(const auto iter = complements.find(complement); iter != complements.end())
+            {
+                return {index, iter->second};
+            }
+            complements.try_emplace(value,index);
+        }
+
+        return {};
     }
 };
 
 auto main(int argc, char* argv[]) -> int
 {
-    
+    Solution2{}.twoSum({2,7,11,15},9);
     return 0;
 }
