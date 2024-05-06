@@ -5,8 +5,9 @@
 #include <ranges>
 
 
-
-class Solution 
+// idk what was going through my mind here. There is a much easier way to do it all in-place
+// by "skipping" over the non-alpha numeric characters. See below.
+class SolutionOld
 {
 public:
     bool isPalindrome(std::string& s) 
@@ -45,6 +46,37 @@ public:
             --R;
         }
 
+        return true;
+    }
+};
+
+class Solution {
+public:
+    auto isPalindrome(const std::string& s) -> bool
+    {
+        auto L = static_cast<int>(0);
+        auto R = static_cast<int>(s.size()-1); // This is why we need the cast, because R might become negative.
+
+        while(L < R)
+        {
+            if(!std::isalnum(s[L]))
+            {
+                ++L;
+            }
+            else if(!std::isalnum(s[R]))
+            {
+                --R;
+            }
+            else if(std::toupper(s[L]) != std::toupper(s[R]))
+            {
+                return false;
+            }
+            else
+            {
+                ++L;
+                --R;
+            }
+        }
         return true;
     }
 };

@@ -63,7 +63,8 @@ public:
     }
 };
 
-// O(n) solution
+// O(n) space,
+// O(n) time - since we need to loop through all of nums twice.
 class Solution2 {
 public:
     std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
