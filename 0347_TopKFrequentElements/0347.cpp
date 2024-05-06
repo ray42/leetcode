@@ -53,6 +53,55 @@ auto print(const std::vector<T>&v)
     return ss.str();
 }
 
+
+
+class Solution {
+public:
+    auto topKFrequent(const std::vector<int>& nums, int k) -> std::vector<int>
+    {
+        
+    }
+};
+
+// O(n) solution
+class Solution2 {
+public:
+    std::vector<int> topKFrequent(std::vector<int>& nums, int k) {
+        std::unordered_map<int, int> mp;
+        int topFreq = 0;
+        for(int x: nums) {
+            mp[x]++;
+            topFreq = std::max(topFreq, mp[x]);
+        }
+
+        std::vector<int> ans;
+
+        std::unordered_map<int, std::vector<int>> freqMap;
+        for(auto it: mp) {
+            freqMap[it.second].push_back(it.first);
+        }
+
+        int count=0;
+
+        while(count<k) {
+            if(freqMap.find(topFreq) != freqMap.end()) {
+                std::vector<int> v = freqMap[topFreq];
+                int n = v.size();
+                for(int i=0; i<n; i++) {
+                    ans.push_back(v[i]);
+                    count++;
+                    if(count == k)
+                        break;
+                }
+            }
+            topFreq--;
+        }
+
+        return ans;
+    }
+};
+
+
 auto main()->int
 {
     auto res = topKFrequent({1,2},1);
