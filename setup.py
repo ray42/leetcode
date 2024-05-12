@@ -9,6 +9,7 @@ currentDir = ""
 def setupLeetCode(dirname):
     # If dirname is empty, just return
     if not dirname:
+        print('Usage: .\\setup.py 0279_PerfectSquares')
         return
     
     # Check for incorrect directory name.
