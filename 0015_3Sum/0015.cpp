@@ -4,7 +4,14 @@
 #include <algorithm>
 
 
-class Solution {
+
+
+
+
+
+
+// This is wrong - times out. Find out the better way to do it above.
+class SolutionWrong {
 public:
     auto threeSum(std::vector<int>& nums) -> std::vector<std::vector<int>>
     {
@@ -26,10 +33,8 @@ public:
             const auto target = -nums[k];
             
             auto complements = std::unordered_map<int,int>{};
-            for(auto i = 0; i < numsSize; ++i)
+            for(auto i = k+1; i < numsSize; ++i)
             {
-                if(i == k) continue;
-                
                 const auto& val = nums[i];
                 const auto& compliment = target - val;
 
@@ -43,7 +48,7 @@ public:
 
                     triplets.insert(triplet);
                 }
-                
+
                 complements.insert({val, i});
             }
         }
