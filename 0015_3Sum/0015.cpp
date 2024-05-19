@@ -2,9 +2,21 @@
 #include <unordered_set>
 #include <unordered_map>
 #include <algorithm>
+#include <iostream>
 
 
+#include "headertest.hpp"
 
+
+class Solution {
+public:
+    auto threeSum(std::vector<int>& nums) -> std::vector<std::vector<int>>
+    {
+        // Sort the array
+        // Fix the 
+        return {};
+    }
+};
 
 
 
@@ -61,6 +73,11 @@ public:
 
 auto main(int argc, char* argv[]) -> int
 {
+    auto tc = TestClass{};
+    
+    std::cout << tc.addAuto(5,2) << '\n';
+
+    //std::cout << tc.addNoTemplate(2,3) << '\n';
     return 0;
 }
 
