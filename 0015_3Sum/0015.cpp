@@ -75,9 +75,13 @@ auto main(int argc, char* argv[]) -> int
 {
     auto tc = TestClass{};
     
-    std::cout << tc.addAuto(5,2) << '\n';
+    std::cout << tc.addNoTemplate(2,3) << '\n';
 
-    //std::cout << tc.addNoTemplate(2,3) << '\n';
+    std::cout << tc.addWithAuto(5,2) << '\n';
+
+    //std::cout << tc.addAuto(5,2) << '\n';
+
+    //
     return 0;
 }
 
