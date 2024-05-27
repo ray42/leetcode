@@ -102,17 +102,109 @@ length - maxf <= k
 6 - 4 <= k
 
 So our result is 6. The only way we can improve upon 6 is if maxf increases too.
-So if maxf happens to be less than 4, we can still use 4, the result is that 
-we just won't update the result.
+So if maxf happens to be less than 4, we can still use 4, the we just won't update the result to 
+anything bigger than 6 and 
+length - maxf <= k still holds true.
 
 */
 #include <string>
+#include <unordered_map>
+#include <algorithm>
 
 class Solution {
 public:
     auto characterReplacement(const std::string& s, int k) -> int
     {
-        
+        // So, I know that I have to start both L and R at the same place and normally, I'd do something like:
+        // auto L = 0, R = 0,
+        // and use a while loop. However, we know that the R pointer needs to keep moving forward one at a time
+        // then if the substring becomes invalid, only then that we move L. 
+        // **So we can actually use a for loop**
+        // But how do we ensure that L never goes beyond R? Because we know that a string of 1 character is valid.
+        // and so, if L == R, then this becomes valid and R has to move.
+        auto frequencies = std::unordered_map<char,int>{};
+
+        auto result = 0;
+        auto L = 0;
+        const auto sSize = s.size();
+        for(auto R = 0; R < sSize; ++R)
+        {
+            ++frequencies[s[R]];
+            // Is this valid?
+            auto substringLength = R - L + 1;
+            auto maxFrequency = std::max_element(
+                std::begin(frequencies), 
+                std::end(frequencies), 
+                [](const auto& p1, const auto& p2)
+                {
+                    return p1.second < p2.second;
+                })->second;
+
+            while(substringLength - maxFrequency > k)
+            {
+                // Keep shifting L until the string is valid
+                --frequencies[s[L]];
+                ++L;
+                substringLength = R - L + 1;
+                auto maxFrequency = std::max_element(
+                std::begin(frequencies), 
+                std::end(frequencies), 
+                [](const auto& p1, const auto& p2)
+                {
+                    return p1.second < p2.second;
+                })->second;
+            }
+
+            result = std::max(R - L + 1, result);
+        }
+        return result;
     }
 };
+
+// Same as above but with maxFrequency optimisation
+// Recall that we only need to calculate the max frequency if it changes
+class SolutionOptimised {
+public:
+    auto characterReplacement(const std::string& s, int k) -> int
+    {
+        // So, I know that I have to start both L and R at the same place and normally, I'd do something like:
+        // auto L = 0, R = 0,
+        // and use a while loop. However, we know that the R pointer needs to keep moving forward one at a time
+        // then if the substring becomes invalid, only then that we move L. 
+        // **So we can actually use a for loop**
+        // But how do we ensure that L never goes beyond R? Because we know that a string of 1 character is valid.
+        // and so, if L == R, then this becomes valid and R has to move.
+        auto frequencies = std::unordered_map<char,int>{};
+
+        auto result = 0;
+        auto L = 0;
+        const auto sSize = s.size();
+        auto maxFrequency = 0;
+        for(auto R = 0; R < sSize; ++R)
+        {
+            ++frequencies[s[R]];
+            // Is this valid?
+            auto substringLength = R - L + 1;
+            maxFrequency = std::max(maxFrequency, frequencies[s[R]]);
+
+            while(substringLength - maxFrequency > k)
+            {
+                // Keep shifting L until the string is valid
+                --frequencies[s[L]];
+                ++L;
+                substringLength = R - L + 1;
+            }
+
+            result = std::max(R - L + 1, result);
+        }
+        return result;
+    }
+};
+
+auto main(int argc, char* argv[]) -> int
+{
+    //auto sss = Solution{}.characterReplacement("ABAB", 2);
+    auto sss = Solution{}.characterReplacement("AABABBA", 1);
+    return 0;
+}
 
