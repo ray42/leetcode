@@ -20,45 +20,90 @@ When we pop, we pop both arr and minArr to keep them synchronised.
 
 #include <stack>
 
-class MinStack 
-{
-public:
 
-    MinStack() 
-    {
+
+class MinStack {
+public:
+    MinStack() {
         
     }
     
-    auto push(int val) -> void
-    {
-        arr.push(val);
-        minArr.push(
-            minArr.empty()? val : 
-            minArr.top() < val ? minArr.top() : val
-        );
-    }
-    
-    auto pop() -> void
-    {
-        arr.pop();
-        minArr.pop();
-    }
-    
-    auto top() -> int
-    {
-        return arr.top();
-    }
-    
-    auto getMin() -> int
-    {
-        return minArr.top();
-    }
+    void push(int val) {
+        stack.push(val);
 
-private:
-
-    std::stack<int> arr{};
-    std::stack<int> minArr{};
+        // Keep track of the min element so far
+        min.push(min.empty() ? val : min.top() < val ?  min.top() : val);
+    }
+    
+    void pop() {
+        stack.pop();
+        min.pop();
+    }
+    
+    int top() {
+        return stack.top();
+    }
+    
+    int getMin() {
+        return min.top();
+    }
+     std::stack<int> stack{};
+     std::stack<int> min{};
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//class MinStack 
+//{
+//public:
+//
+//    MinStack() 
+//    {
+//        
+//    }
+//    
+//    auto push(int val) -> void
+//    {
+//        arr.push(val);
+//        minArr.push(
+//            minArr.empty()? val : 
+//            minArr.top() < val ? minArr.top() : val
+//        );
+//    }
+//    
+//    auto pop() -> void
+//    {
+//        arr.pop();
+//        minArr.pop();
+//    }
+//    
+//    auto top() -> int
+//    {
+//        return arr.top();
+//    }
+//    
+//    auto getMin() -> int
+//    {
+//        return minArr.top();
+//    }
+//
+//private:
+//
+//    std::stack<int> arr{};
+//    std::stack<int> minArr{};
+//};
 
 /**
  * Your MinStack object will be instantiated and called as such:

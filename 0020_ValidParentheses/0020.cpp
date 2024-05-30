@@ -4,9 +4,68 @@ Easy: https://leetcode.com/problems/valid-parentheses/
 #include <cassert>
 #include <string>
 #include <vector>
+#include <stack>
 
 
 class Solution {
+public:
+    auto isValid(const std::string& s) -> bool
+    {
+        auto stack = std::stack<char>{};
+        for(const auto c : s )
+        {
+            switch(c)
+            {
+                case '(':
+                    stack.push('(');
+                break;
+                case '{':
+                    stack.push('{');
+                break;
+                case '[':
+                    stack.push('[');
+                break;
+
+                case ')':
+                {
+                    if(stack.empty() || stack.top() != '(') return false;
+                    stack.pop();
+                }
+                break;
+                case '}':
+                {
+                    if(stack.empty() || stack.top() != '{') return false;
+                    stack.pop();
+                }
+                break;
+                case ']':
+                {
+                    if(stack.empty() || stack.top() != '[') return false;
+                    stack.pop();
+                }
+                break;
+
+                default:
+                assert(0);
+                break;
+            }
+        }
+
+        return stack.empty();
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+class SolutionAccepted {
 public:
     auto isValid(const std::string& s) -> bool
     {
