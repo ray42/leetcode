@@ -14,58 +14,51 @@ public:
         auto stack = std::stack<int>{};
         for(const auto& token : tokens)
         {
-            if(isNumber(token))
+            if(token == "+")
             {
-                stack.push(std::stoi(token));
-            }
-            else if(token == "+")
-            {
-                auto i = stack.top();
+                const auto n = stack.top();
                 stack.pop();
-                auto j = stack.top();
+                const auto m = stack.top();
                 stack.pop();
-                stack.push(i+j);
-            }
-            else if(token == "/")
-            {
-                auto i = stack.top();
-                stack.pop();
-                auto j = stack.top();
-                stack.pop();
-                stack.push(i/j);
-            }
-            else if(token == "*")
-            {
-                auto i = stack.top();
-                stack.pop();
-                auto j = stack.top();
-                stack.pop();
-                stack.push(i*j);
+                stack.push(m+n);
             }
             else if(token == "-")
             {
-                auto i = stack.top();
+                const auto n = stack.top();
                 stack.pop();
-                auto j = stack.top();
+                const auto m = stack.top();
                 stack.pop();
-                stack.push(i-j);
+                stack.push(m-n);
+            }
+            else if(token == "*")
+            {
+                const auto n = stack.top();
+                stack.pop();
+                const auto m = stack.top();
+                stack.pop();
+                stack.push(m*n);
+            }
+            else if(token == "/")
+            {
+                const auto n = stack.top();
+                stack.pop();
+                const auto m = stack.top();
+                stack.pop();
+                stack.push(m/n);
+            }
+            else
+            {
+                stack.push(std::stoi(token));
             }
         }
         return stack.top();
-    }
-
-    auto isNumber(const std::string& s) -> bool
-    {
-        return s.empty() && 
-        std::find_if(s.begin(), s.end(), 
-        [](unsigned char c){
-            return !std::isdigit(c);
-        }) == s.end();
     }
 };
 
 
 auto main(int argc, char* argv[]) -> int
 {
+    auto v = std::vector<std::string>{{"4","13","5","/","+"}};
+    Solution{}.evalRPN(v);
     return 0;
 }
