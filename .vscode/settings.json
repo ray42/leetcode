@@ -72,6 +72,16 @@
         "deque": "cpp",
         "functional": "cpp",
         "stack": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "any": "cpp",
+        "codecvt": "cpp",
+        "condition_variable": "cpp",
+        "cwctype": "cpp",
+        "filesystem": "cpp",
+        "mutex": "cpp",
+        "source_location": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "variant": "cpp"
     }
 }
