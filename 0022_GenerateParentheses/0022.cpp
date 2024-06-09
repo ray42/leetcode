@@ -2,7 +2,9 @@
 #include <vector>
 #include <string>
 #include <unordered_set>
+#include <stack>
 
+// NOTE: This is not a STACK question! This is more backtracking, Neetcode is incorrect!
 
 // With this solution, we generate all the possibilities in the sense that at each stage, we can choose to
 // either add an ( or ) to the entry. However, there are restrictions, and they are:
@@ -12,7 +14,41 @@ class Solution {
 public:
     auto generateParenthesis(const int n) -> std::vector<std::string>
     {
+        auto currentEntry = std::string{};
+        auto result = std::vector<std::string>{};
+        backtrack(n, 0,0,currentEntry,result);
+
+        return result;
+
+    }
+
+private:
+    auto backtrack(const int n, const int numOpen, const int numClose, std::string& currentEntry, std::vector<std::string>& result) -> void
+    {
+        // base case is when the number of open and close braces equal n
+        if(numOpen == n && numClose == n)
+        {
+            result.push_back(currentEntry);
+            return;
+        }
+
+        // We try to insert a ( only if n > numOpen.
+        if(n > numOpen)
+        {
+            currentEntry.append("(");
+            backtrack(n, numOpen + 1, numClose, currentEntry, result);
+
+            // Pop the ( and do the right side
+            currentEntry.pop_back();
+        }
         
+        if(numOpen > numClose)
+        {
+            currentEntry.append(")");
+            backtrack(n, numOpen, numClose + 1, currentEntry, result);
+            // Pop the )
+            currentEntry.pop_back();
+        }
     }
 };
 
@@ -97,16 +133,16 @@ public:
 auto main(int argc, char * argv[]) -> int
 {
     auto sol = Solution{};
-    auto s0 = sol.generateParenthesis(0);
-    auto iii0 = 42;
-    auto s1 = sol.generateParenthesis(1);
-    auto iii1 = 42;
-    auto s2 = sol.generateParenthesis(2);
-    auto iii2 = 42;
+    //auto s0 = sol.generateParenthesis(0);
+    //auto iii0 = 42;
+    //auto s1 = sol.generateParenthesis(1);
+    //auto iii1 = 42;
+    //auto s2 = sol.generateParenthesis(2);
+    //auto iii2 = 42;
     auto s3 = sol.generateParenthesis(3);
-    auto iii3 = 42;
-    auto s4 = sol.generateParenthesis(4);
-    auto iii4 = 42;
+    //auto iii3 = 42;
+    //auto s4 = sol.generateParenthesis(4);
+    //auto iii4 = 42;
 
     auto iii = 42;
     return 0;
