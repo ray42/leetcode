@@ -23,6 +23,7 @@ public:
     }
 
 private:
+
     auto backtrack(const int n, const int numOpen, const int numClose, std::string& currentEntry, std::vector<std::string>& result) -> void
     {
         // base case is when the number of open and close braces equal n
@@ -47,7 +48,7 @@ private:
             currentEntry.append(")");
             backtrack(n, numOpen, numClose + 1, currentEntry, result);
             // Pop the )
-            currentEntry.pop_back();
+            currentEntry.pop_back(); // this is needed to go back up the tree
         }
     }
 };
