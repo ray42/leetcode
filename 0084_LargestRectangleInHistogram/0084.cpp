@@ -52,7 +52,7 @@ public:
             auto newCol = Column{};
             newCol.val = heights[i];
             newCol.index = i;
-            newCol.left = stack.empty()? -1: stack.top().index;
+            newCol.left = stack.empty()? -1: stack.top().index; // Because if you draw out the histogram, this is the index where it's smaller than the current newCol
             stack.push(newCol);
         }
 
