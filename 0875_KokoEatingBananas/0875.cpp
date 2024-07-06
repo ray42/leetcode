@@ -70,7 +70,13 @@ public:
             // So we have to explicitly call the accumulate function with type information. This is for the test case:
             // piles = [805306368, 805306368, 805306368]
             // h = 1000000000
-            auto hours = std::accumulate<decltype(piles.begin()), ll>(piles.begin(), piles.end(), 0, [&](ll currentSum, ll pi)
+            //auto hours = std::accumulate<decltype(piles.begin()), ll>(piles.begin(), piles.end(), 0, [&](ll currentSum, ll pi)
+            //{
+            //    return currentSum + static_cast<ll>(std::ceil(pi/static_cast<double>(M)));
+            //});
+            
+            // Or I could have done this. lol
+            auto hours = std::accumulate(piles.begin(), piles.end(), ll{}, [&](ll currentSum, ll pi)
             {
                 return currentSum + static_cast<ll>(std::ceil(pi/static_cast<double>(M)));
             });
