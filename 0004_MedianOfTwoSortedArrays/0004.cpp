@@ -53,9 +53,10 @@ Let
 A = [1,2,3,4,5,6,7,8], N = 8
 B = [1,2,3,5], M = 4
 What is the median?
-A+B = [1,1,2,2,3,3,4,5,5,6,7,8], N+M=12, 
+       0 1 2 3 4 5 6 7 8 9 10 11
+A+B = [1,1,2,2,3,3,4,5,5,6,7, 8], N+M=12, 
 Because it is even, we need avg(6,6+1)'s element:
-=(3+4)/2 = 3.5
+=(3+4)/2 = 3.5 (1 based)
 
 The * denotes median element(s)
 
@@ -79,8 +80,12 @@ Odd:
        1 2 3 4 5 6   7 8 9 10 11 12 13
 A+B = [1,1,2,2,3,3],[4*,5,5,6, 7, 8, 9] (So we need to do the left partition + 1).
 
-Let's split the A+B back into two arrays and see where the two partitions lie:
-Even:
+Now I want to work backwards. Let's split the [A+B] back into the two arrays original arrays but we keep
+the partitions we created for [A+B] and see where the two partitions lie, that way we hope to come up with
+a method which helps us re-create the partitioning without us having to join the two arrays together:
+
+Without Loss of Generality, we choose the even [A+B]:
+
 A = [1,2,3] ,[4*,5,6,7,8], N = 8
      A_L      A_R
 B = [1,2,3*],[5], M = 4
@@ -100,8 +105,8 @@ B = [1,2,3*],    [5], M = 4
 max_A_L <= min_A_R and min_B_R
 max_B_L <= min_A_R and min_B_R
 
-If max_A_L > min_A_R and min_B_R it means we need less of A (we only need to check if max_A_L > min_B_R since max_A_L < max_A_R is a given)
-  -> we continue to search for the partition on the right half of B (we only need to check if max_B_L > min_A_R since max_B_L < max_B_R is a given)
+If max_A_L > min_A_R and min_B_R it means we need less of A (we only need to check if max_A_L > min_B_R since max_A_L < min_A_R is a given)
+  -> we continue to search for the partition on the right half of B (we only need to check if max_B_L > min_A_R since max_B_L < min_B_R is a given)
 
 If max_B_L > min_A_R and min_B_R it means we need less of B 
   -> we continue to search for the partition on the left half of B
@@ -194,10 +199,16 @@ Let's code this up!!!
 
 #include <vector>
 #include <cassert>
+#include <limits>
+
+//#define CATCH_CONFIG_MAIN
+//#include "./../common/catch_amalgamated.hpp"
+
 
 class SolutionLinear {
 public:
 
+    // Pointers into the two arrays nums1 and nums2
     int p1 = 0;
     int p2 = 0;
 
@@ -273,39 +284,182 @@ public:
         const auto nums1Size = std::ssize(nums1);
         const auto nums2Size = std::ssize(nums2);
         const auto N = nums1Size + nums2Size;
+        const auto NHalf = N/2;
+
+        const bool isOdd = N&1;
 
         // We want to run binary search on the smaller array.
         const auto& A = nums1Size > nums2Size ? nums1 : nums2;
         const auto& B = nums1Size <= nums2Size ? nums1 : nums2;
 
-        auto BLeft = decltype(nums1Size){0};
-        auto BRight = std::ssize(B) - 1;
+        // Note: WE ARE USING ZERO BASED INDICES HERE!!!
+        auto BLeftIndex = decltype(nums1Size){0};
+        auto BRightIndex = std::ssize(B) - 1;
 
-        while(BLeft <= BRight)
+        while(BLeftIndex <= BRightIndex)
         {
             // Work out the elements:
             // max_A_left, min_A_right
             // max_B_left, min_B_right
-
+            // In order to do that, I must perform binary search on B:
+            
             // BMid is always in the left half.
-            const auto BMid = (BLeft + BRight)/2;
+            const auto BMidIndex = (BLeftIndex + BRightIndex)/2;
 
             // 
-            const auto maxBLeftVal = B[BMid];
-            const auto minBRightVal = B[BMid+1]; // RRR42 - this doesn't work with just one element.
+            const auto maxBLeftVal = B[BMidIndex];
 
+            // If we have 1 element, then we have:
+            // [1]
+            //  L
+            //  M
+            //  R
+            // so take minBRightVal = B[BMidIndex]
+            // However, if we have 2 or more elements, then we can take minBRightVal as B[BMidIndex+1]
+            const auto minBRightVal = BMidIndex == BRightIndex ? B[BMidIndex] : B[BMidIndex+1];
 
+            // Now work out max_A_left, min_A_right
+            // Note that N is 1 based. Thus, to work out how many elements of A I need, I can
+            // make BMidIndex one based too before subtracting from NHalf:
+            const auto numEleFromA = NHalf - (BMidIndex + 1);
+            // Now make it an index
+            const auto AMidIndex = numEleFromA - 1; // make it 0 based.
+
+            // If we take no elements from A, we still need to compare with A's values, so we set these sentinel values.
+            const auto maxALeftVal = numEleFromA == 0 ? std::numeric_limits<int>::lowest() : A[AMidIndex];
+            const auto minARightVal = numEleFromA == 0 ? std::numeric_limits<int>::max() :
+            numEleFromA == 1 ? maxALeftVal : A[AMidIndex + 1]; // Just in base both A and B are single element indices.
             
+            //auto maxALeftVal = int{};
+            //if(numEleFromA == 0)
+            //{
+            //    maxALeftVal = 
+            //}
+
+
+            // Now I can test the condition
+            // If  maxBLeftVal > minARightVal, it means we need less from B and more from A, thus we search to the left of B
+            if(maxBLeftVal > minARightVal)
+            {
+                BRightIndex = BMidIndex - 1;
+                continue;
+            }
+            else if(maxALeftVal > minBRightVal) // We need more from B and less from A. Look to the right of B
+            {
+                BLeftIndex = BMidIndex + 1;
+                continue;
+            }
+
+            // Otherwise the condition is satisfied and now we should work out our median!
+            if(N % 2 == 0)
+            {
+                auto  res = double{0};
+                if(N/2 == B.size())
+                {
+                    // We have used up all the elements from B, but we need to do the average with the next element up.
+                    // The problem is that we have assigned sentinel values to maxALeftVal.
+                    // let's just calculate this case manually.
+                    // E.g.
+                    // A = [3,4]
+                    // B = [1,2]
+                    res = (B.back() + A.front()) / 2.0;
+                }
+                else
+                {
+                    // If the total number of elements are even, then we need to get the avg of (the largest left, min right):
+                    const auto largestLeftVal = std::max(maxALeftVal, maxBLeftVal);
+                    const auto minRightVal = std::min(minARightVal, minBRightVal);
+                    res = (largestLeftVal + minRightVal) / 2.0;
+                }
+                return res;
+            }
+            else
+            {
+                // For the same reason above, it may be that we have used up all the N/2 elements in B
+                // e.g. if
+                // A = [3,4,5]
+                // B = [1,2]
+                // So N/2 +1th element = 5/2 +1 = 3rd element, but that's in A.
+                //if(N/2 == B.size())
+                //{
+                //    return A.front();
+                //}
+                //else
+                {
+                    // Note: If the total number of elements is odd, we simply return the 
+                    // (N/2 +1)th element. E.g.
+                    //
+                    // [1,2,3,4,5], 5/2 = 2, 2+1 = 3, return the 3th element, which is min(min_A_R,min_B_R),
+                    // i.e. the smaller of the two right halves.
+                    const auto minRightVal = std::min(minARightVal, minBRightVal);
+                    return minRightVal;
+                }
+                
+            }
         }
 
-        
+        // If we are out of the for loop, then it means we do not take any elements from B. Only A.
+        // If even:
+        //  0 1 2 3 4 5
+        // [1,2,3,4,5,6], get average of two middle element
+        if(N % 2 == 0)
+        {
+            if(N/2 < A.size())
+            {
+                return (A[N/2 - 1] + A[N/2]) / 2.0;
+            }
+            else
+            {   
+                // We need the first value of B to work out the (N/2  +1)'s value, since N/2 is already at the end of A.
+                // We might have something like 
+                // A = [1,2]
+                // B = [3,4]
+                // So we need to take the average of 2 and 3
+                return (A[N/2] + B[0]) / 2.0;
+            }
+        }
+        else
+        {
+            // For the same reason above, the N/2+1th value might be in B. So we need to check this:
+            if(N/2 < A.size())
+            {
+                return A.size() == 1 ? A.front() : A[N/2  +1];
+            }
+            else
+            {
+                return B[0];
+            }
+        }
     }
 };
 
 
+//TEST_CASE("Benchmark Fibonacci", "[SolutionBinarySearch]") {
+//    auto solutionBinarySearch = SolutionBinarySearch{};
+//    REQUIRE(solutionBinarySearch.findMedianSortedArrays({1,3},{2}) == 2);
+//
+//    //REQUIRE(fibonacci(20) == 6'765);
+//    //BENCHMARK("fibonacci 20") {
+//    //    return fibonacci(20);
+//    //};
+////
+//    //REQUIRE(fibonacci(25) == 75'025);
+//    //BENCHMARK("fibonacci 25") {
+//    //    return fibonacci(25);
+//    //};
+//}
+
 auto main(int argc, char* argv[])->int
 {
-    auto ii = SolutionLinear{}.findMedianSortedArrays({1,2},{3,4});
+    //auto ii = SolutionLinear{}.findMedianSortedArrays({1,2},{3,4});
+
+    
+    //auto ii = SolutionBinarySearch{}.findMedianSortedArrays({1,3},{2});
+    //auto ii = SolutionBinarySearch{}.findMedianSortedArrays({1,2},{3,4});
+    //auto ii = SolutionBinarySearch{}.findMedianSortedArrays({},{1});
+    //auto ii = SolutionBinarySearch{}.findMedianSortedArrays({},{2,3});
+    auto ii = SolutionBinarySearch{}.findMedianSortedArrays({3},{-2,-1});// I give up. I'll do this on the weekend.
+    auto iii = 42;
     return 0;
 }
 
