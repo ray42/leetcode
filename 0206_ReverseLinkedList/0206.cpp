@@ -89,6 +89,84 @@ private:
     }
 };
 
+// This is recursion but done in a slightly different order than the above (in the recursive step)
+// and the one above took me a while to reason about, idk why.
+class SolutionRec {
+public:
+using ListNodePtr = ListNode*;
+
+    ListNode* reverseList(ListNode* head)
+    {
+        // We know that we need to point the current to the previous.
+        // The base case is still when current is nullptr.
+        // We need to return the previous when we get to the base case because that will be the new head.
+        auto prev = ListNodePtr{nullptr};
+        return reverseList(prev, head);
+    }
+
+    ListNodePtr reverseList(ListNodePtr prev, ListNodePtr current)
+    {
+        if(current == nullptr)
+        {
+            return prev;
+        }
+
+        auto next = current->next;
+        current->next = prev;
+        return reverseList(current,next);
+    }
+};
+
+///////////////////////////////////////////////////////////////
+// Below are for practice, exactly the same as above.
+
+// Do both iterative and recursive
+class SolutionIter {
+public:
+using ListNodePr = ListNode*;
+
+    ListNode* reverseList(ListNode* head)
+    {
+        auto prev = ListNodePr{nullptr};
+        auto current = head;
+        while(current)
+        {
+            auto next = current->next;
+            current->next = prev;
+            prev = current;
+            current = next;
+        }
+        return prev;
+    }
+};
+
+class SolutionRec {
+public:
+using ListNodePtr = ListNode*;
+
+    ListNode* reverseList(ListNode* head)
+    {
+        // We know that we need to point the current to the previous.
+        // The base case is still when current is nullptr.
+        // We need to return the previous when we get to the base case because that will be the new head.
+        auto prev = ListNodePtr{nullptr};
+        return reverseList(prev, head);
+    }
+
+    ListNodePtr reverseList(ListNodePtr prev, ListNodePtr current)
+    {
+        if(current == nullptr)
+        {
+            return prev;
+        }
+
+        auto next = current->next;
+        current->next = prev;
+        return reverseList(current,next);
+    }
+};
+
+
 
 auto main(int argc, char* argv[])->int
 {
