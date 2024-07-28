@@ -13,68 +13,40 @@ struct ListNode
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-class Solution {
+class SolutionIter {
 public:
-    using PtrListNode = ListNode *;
+using PtrListNode = ListNode *;
 
-    auto mergeTwoLists(ListNode* list1, ListNode* list2) -> ListNode*
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
     {
-        if(list1 == nullptr)
+        auto dummyHead = std::make_unique<ListNode>();
+        auto current = dummyHead.get();
+        
+        while(list1 && list2)
         {
-            return list2;
-        }
-        if(list2 == nullptr)
-        {
-            return list1;
-        }
-
-        // Now determine the "current" and store the head to be returned.
-        auto head = PtrListNode{nullptr};
-        auto current = PtrListNode{nullptr};
-
-        auto p1 = PtrListNode{nullptr}; // pointer to the next node to be considered in list1
-        auto p2 = PtrListNode{nullptr}; // pointer to the next node to be considered in list1
-        if(list1->val < list2->val)
-        {
-            current = list1;
-            head = list1;
-            p1 = current->next;
-            p2 = list2;
-        }
-        else
-        {
-            current = list2;
-            head = list2;
-            p1 = list1;
-            p2 = current->next;
-        }
-
-        while(p1 != nullptr  && p2 != nullptr)
-        {
-            if(p1->val < p2->val)
+            if(list1->val < list2->val)
             {
-                current->next = p1;
-                current = p1;
-                p1 = current->next;
+                current->next = list1;
+                list1 = list1->next;
             }
             else
             {
-                current->next = p2;
-                current = p2;
-                p2 = current->next;
+                current->next = list2;
+                list2 = list2->next;
             }
+            current = current->next;
         }
 
-        if(p1 != nullptr)
+        if(list1)
         {
-            current->next = p1;
+            current->next = list1;
         }
-        if(p2 != nullptr)
+        if(list2)
         {
-            current->next = p2;
+            current->next = list2;
         }
 
-        return head;
+        return dummyHead->next;
     }
 };
 
@@ -84,39 +56,7 @@ public:
 
     auto mergeTwoLists(PtrListNode list1, PtrListNode list2) -> PtrListNode
     {
-        if(list1 == nullptr)
-        {
-            return list2;
-        }
-        if(list2 == nullptr)
-        {
-            return list1;
-        }
-
-        // Now determine the "current" and store the head to be returned.
-        auto head = PtrListNode{nullptr};
-        auto current = PtrListNode{nullptr};
-
-        auto p1 = PtrListNode{nullptr}; // pointer to the next node to be considered in list1
-        auto p2 = PtrListNode{nullptr}; // pointer to the next node to be considered in list1
-        if(list1->val < list2->val)
-        {
-            current = list1;
-            head = list1;
-            p1 = current->next;
-            p2 = list2;
-        }
-        else
-        {
-            current = list2;
-            head = list2;
-            p1 = list1;
-            p2 = current->next;
-        }
-
-        mergeTwoLists(current, p1, p2);
-
-        return head;
+        return {};
     }
 private:
     auto mergeTwoLists(PtrListNode current, PtrListNode p1, PtrListNode p2) -> void
