@@ -134,6 +134,100 @@ using PtrListNode = ListNode*;
             return;
         }
 
+        // Need to do three things:
+        // 1) Split the linked list,
+        // 2) Reverse right half
+        // 3) Combine
+        
+
+
+        // 1) Split the linked list,
+        auto slow = head;
+        auto fast = head->next;
+
+        // How did we derive this condition? Let's check out where the fast pointer lands in both even and odd number cases:
+        // 1->2->3->4
+        //          ^ fast ends here
+        //    ^ slow ends here
+        // 1->2->3->4->5
+        //               ^ fast ends at a nullptr
+        //       ^slow ends here
+        // 
+        // So in both cases, we can terminate the while loop and guarantee that the slow pointer's next is the start of the 2nd half of the list
+        // if the condition is fast->next != nullptr (for even) and fast != nullptr (odd)
+        while(fast && fast->next)
+        {
+            // Advance slow by 1
+            slow = slow->next;
+
+            // Advance fast by two, this is guaranteed to work, try it with slow and fast pointer with a 
+            // odd and even numbered list. We will never go out of bounds.
+            // Think of it like this, if fast is currently on a not null node, or on null, then the loop condition triggers and we won't run anymore.
+            // this means, fast must be at the penultimate node or earlier. If it's on the penultimate, then
+            // fast->next is the last node and fast->next->next is nullptr, both are valid.
+            fast = fast->next->next;
+        }
+
+
+        // 2) Reverse right half
+
+        // Now we reverse the 2nd half of the list, which starts at slow->next
+        auto rhsCurrent = slow->next;
+
+        // Terminate the LHS
+        slow->next = nullptr;
+        
+        auto prev = PtrListNode{nullptr};
+        while(rhsCurrent)
+        {
+            auto next = rhsCurrent->next;
+            rhsCurrent->next = prev;
+            prev = rhsCurrent;
+            rhsCurrent = next;
+        }
+
+        // Now combine these two!
+        auto lhsHead = head;
+        auto rhsHead = prev;
+        
+        // This is pretty damn smart. I works if you try on an odd and then an even list:
+        // Even:
+        // 1->2->null
+        // 4->3
+        //   On the last iteration, point 2 to 3, then 3 to what 2 WAS pointing to (null)
+        //
+        // Odd:
+        // 1->2->3
+        // 4->5
+        //   On the last iteration, point 2 to 5, then 5 to what 2 WAS pointing to (3). 3 is already pointing to null, so we are done!
+        while(rhsHead)
+        {
+            auto next1 = lhsHead->next;
+            auto next2 = rhsHead->next;
+            
+            lhsHead->next = rhsHead;
+            rhsHead->next = next1;
+
+            lhsHead = next1;
+            rhsHead = next2;
+        }
+    }
+};
+
+// This is my first attempt at the solution. After watching NeetCode's video, I realised that my approach was
+// not element, so I am trying again, see the solution above.
+class SolutionOptimisedSpaceFirstAttempt {
+public:
+using PtrListNode = ListNode*;
+    auto reorderList(ListNode* head) -> void
+    {
+        // Edge cases for 
+        // [], [1], [1,2], only when we reach [1,2,3] is when re-ordering happens: [1,3,2]
+        if(head == nullptr || head->next == nullptr || head->next->next == nullptr)
+        {
+            return;
+        }
+
         // 1) Split the linked list,
         // 2) Reverse right half
         // 3) Combine
@@ -163,6 +257,9 @@ using PtrListNode = ListNode*;
 
         // Now we reverse the 2nd half of the list, which starts at slow->next
         auto rhsCurrent = slow->next;
+
+        // Terminate the RHS
+        slow->next = nullptr;
         
         auto prev = PtrListNode{nullptr};
         while(rhsCurrent)
@@ -177,21 +274,42 @@ using PtrListNode = ListNode*;
         auto rhsHead = prev;
         auto lhsHead = head;
         
-        //auto tmp = ListNode{};
-        //auto prev = &tmp;
-        //while(lhsHead || rhsHead)
-        //{
-        //    prev->next = lhsHead;
-        //    lhsHead->next = rhsHead;
-        //}
+        auto tmp = ListNode{};
+        prev = &tmp;
+        while(lhsHead)
+        {
+            auto next1 = lhsHead->next;
+            prev->next = lhsHead;
 
-        
+            if(rhsHead == nullptr)
+            {
+                prev = lhsHead;
+                break;
+            }
+            auto next2 = rhsHead->next; // this is where the nullptr access happened.
+            prev->next->next = rhsHead;
+
+            prev = rhsHead;
+            lhsHead = next1;
+            rhsHead = next2;
+        }
+
+        prev->next = nullptr;
     }
 };
 
 
 auto main(int argc, char* argv[]) -> int
 {
+    auto l5 = ListNode{5};
+    auto l4 = ListNode{4, &l5};
+    auto l3 = ListNode{3, &l4};
+    auto l2 = ListNode{2, &l3};
+    auto l1 = ListNode{1, &l2};
+    SolutionOptimisedSpace{}.reorderList(&l1);
+
+    auto ii = 42;
+
     return 0;
 }
 
