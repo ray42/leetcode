@@ -119,6 +119,39 @@ while(R1->next && kk > 0)
 if(kk > 0) break // this means we still have some steps to do but we have reached the end of the list.
 
 DONE! That's pretty much the algorithm!!!
+
+--------------------------------------------------
+
+Edge case: Does it work for k=1?
+
+L1
+d->1->2->3->4->5->6->7
+
+Increment L1 by 1 to get R1:
+L1 R1
+d->1->2->3->4->5->6->7
+
+Now create L2 and R2 by incrementing L1 and R1:
+L1 R1
+   L2 R2
+d->1->2->3->4->5->6->7
+
+Reverse the sublist denoted by [L2,...,R1] (nothing to reverse, just one node):
+L1 R1
+   L2 R2
+d->1->2->3->4->5->6->7
+
+Now we need to connect the ends:
+L1->next = R1
+L2->next = R2
+
+Result:
+L1 R1
+   L2 R2
+d->1->2->3->4->5->6->7
+
+Yup, nothing has changed, it works.
+
 */
 
 
