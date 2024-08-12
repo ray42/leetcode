@@ -13,6 +13,10 @@ struct TreeNode {
 };
 
 /*
+NOTE: THE DEFINITION OF DEPTH USED IN THIS PROBLEM IS INCORRECT.
+THEY DEPTH IS THE NUMBER OF EDGES FROM A NODE TO THE ROOT. THEY ARE COUNTING NODES IN THIS PROBLEM INSTEAD.
+BAD LEETCODE! BAD
+
 This is my preferred solution.
 
 The depth of a node is the number of edges from the root to the node. 
