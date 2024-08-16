@@ -50,8 +50,35 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// This is the optimised approach, where we visit each node only once.
+// Below this is the Naive approach. 
+class SolutionOptimised {
+public:
+    auto isBalanced(TreeNode* root) -> bool
+    {
+        const auto&[ isHeightBalanced, height] = dfs(root);
 
-class Solution {
+        return isHeightBalanced;
+    }
+
+    auto dfs(TreeNode* root) -> std::tuple<bool, int>
+    {
+        if(!root)
+        {
+            return {true, 0};
+        }
+
+        const auto&[leftBalance, leftHeight] = dfs(root->left);
+        const auto&[rightBalance, rightHeight] = dfs(root->right);
+
+        auto thisBalanced = std::abs(leftHeight - rightBalance) <= 1;
+
+        return {leftBalance && rightBalance && thisBalanced, std::max(leftHeight, rightHeight) + 1};
+    }
+};
+
+// This is the O(N^2) naive approach.
+class SolutionNaiveApproach {
 public:
     int m_maxLeafDepth{std::numeric_limits<int>::lowest()};
     int m_minLeafDepth{std::numeric_limits<int>::max()};
