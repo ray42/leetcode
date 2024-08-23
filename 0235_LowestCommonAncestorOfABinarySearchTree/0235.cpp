@@ -83,6 +83,7 @@ public:
             }
         }
 
+        return curr;
     }
 };
 

@@ -71,8 +71,11 @@ public:
         const auto&[leftBalance, leftHeight] = dfs(root->left);
         const auto&[rightBalance, rightHeight] = dfs(root->right);
 
-        auto thisBalanced = std::abs(leftHeight - rightBalance) <= 1;
+        auto thisBalanced = std::abs(leftHeight - rightHeight) <= 1;
 
+        // Why do we need to check if the left and right are balanced as well as this one?
+        // Because there could be a case where this is height balanced, but left or right is not.
+        // E
         return {leftBalance && rightBalance && thisBalanced, std::max(leftHeight, rightHeight) + 1};
     }
 };
@@ -163,9 +166,17 @@ auto buildTree(const std::vector<int>& vec) -> TreeNode*
 
 auto main(int arc, char* argv[]) -> int
 {
-    auto root = buildTree({1,2,2,3,3,INT_MAX,INT_MAX,4,4});
+    //auto root = buildTree({1,2,2,3,3,INT_MAX,INT_MAX,4,4});
 
-    auto isBalanced = Solution{}.isBalanced(root);
+    // [1,null,2,null,3]
+    auto node1 = TreeNode{1};
+    auto node2 = TreeNode{2};
+    auto node3 = TreeNode{3};
+
+    node1.right = &node2;
+    node2.right = &node3;
+
+    auto isBalanced = SolutionOptimised{}.isBalanced(&node1);
     auto iii = 42;
     return 0;
 }
