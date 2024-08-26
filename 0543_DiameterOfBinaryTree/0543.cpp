@@ -33,7 +33,7 @@ if a node has at least 1 child, we calculate the height the normal way since we 
        if a node is null OR has no children, return 0 as the height.
 */
 
-// Note: I've made a slight change due to neetcode's video, on how I handle the basecase and caluclating the diameter.
+// Note: I've made a slight change due to neetcode's video, on how I handle the base case and calculating the diameter.
 // But I cba to go back and correct my writing. I will correct it when I need to re-do this problem
 class Solution {
 public:
