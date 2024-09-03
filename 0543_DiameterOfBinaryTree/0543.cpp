@@ -12,7 +12,8 @@ struct TreeNode {
 
 
 /*
-
+D = diameter
+H = height of the node (len of node to the deepest left)
               1 D=3, H=2
             /   \
   D=2, H=1 2     3 D=0, H=0

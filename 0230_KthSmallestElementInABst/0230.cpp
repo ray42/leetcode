@@ -18,6 +18,8 @@ public:
         auto i = int{};
         auto res = int{};
         dfs(root, k, i, res);
+
+        return res;
     }
 
     auto dfs(TreeNode* node, const int& k, int& i, int& res) -> void
