@@ -20,9 +20,9 @@ H = height of the node (len of node to the deepest left)
           / \ 
 D=0, H=0 4   5 D=0, H=0
 
-At each node:
-Height of node = 1 + max(height(left child), height(right child))
-Diameter of node = height from here going left node PLUS height from here going right node = (1+height(left child)) + (1+height(right right))
+At each node, we calculate two things:
+1) Height of node = 1 + max(height(left child), height(right child))
+2) Diameter of node = height from here going left node PLUS height from here going right node = (1+height(left child)) + (1+height(right right))
 
 We need to return the height to feed back to the parent
 We need to keep track of the max diameter.
@@ -64,7 +64,7 @@ public:
         auto diameter = leftHeight + rightHeight;
         maxDiameter = std::max(maxDiameter, diameter);
 
-        return 1+ std::max(leftHeight, rightHeight);
+        return 1 + std::max(leftHeight, rightHeight);
     }
 };
 

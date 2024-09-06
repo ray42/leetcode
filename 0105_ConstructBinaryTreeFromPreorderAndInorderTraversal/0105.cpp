@@ -43,7 +43,10 @@ We create the root node from the preorder. If this is empty, we return a nullptr
 If it's not empty, then we need to partition the two preorder and inorder lists and make two recursive calls for the left and right node.
 The recursive calls will return their root nodes which we can attach to the root node in the current function.
 
+---------------------------
 
+NOTE: I really need to read the solution on leetcode for the O(N) solution when I revisit this.
+Neetcode's code is very similar to mine, but with better iterator manipulation
 */
 
 #include <vector>
