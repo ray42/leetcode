@@ -70,26 +70,27 @@ struct TreeNode {
 class Solution {
 public:
 
-  int maxPathSum(TreeNode* root)
-  {
-    auto maxPathSumOfAllNodes = INT_MIN;
-    return maxValueFromLeaf(root, maxPathSumOfAllNodes);
-  }
+    int maxPathSum(TreeNode* root)
+    {
+        auto maxPathSumOfAllNodes = INT_MIN;
+        maxValueFromLeaf(root, maxPathSumOfAllNodes);
+        return maxPathSumOfAllNodes;
+    }
 
-  int maxValueFromLeaf(TreeNode* root, int& maxPathSumOfAllNodes)
-  {
-    if(!root)
-     return 0;
+    int maxValueFromLeaf(TreeNode* root, int& maxPathSumOfAllNodes)
+    {
+        if(!root)
+            return 0;
 
-    auto maxLeft = std::max(0,maxValueFromLeaf(root->left,maxPathSumOfAllNodes));
-    auto maxRight = std::max(0,maxValueFromLeaf(root->right,maxPathSumOfAllNodes));
+        auto maxLeft = std::max(0,maxValueFromLeaf(root->left,maxPathSumOfAllNodes));
+        auto maxRight = std::max(0,maxValueFromLeaf(root->right,maxPathSumOfAllNodes));
 
-    // Work out the max path sum passing through this node and update maxPathSumOfAllNodes
-    auto thisMaxPathSum = std::max(0, maxLeft + root->val + maxRight);
-    maxPathSumOfAllNodes = std::max(thisMaxPathSum, maxPathSumOfAllNodes);
+        // Work out the max path sum passing through this node and update maxPathSumOfAllNodes
+        auto thisMaxPathSum = maxLeft + root->val + maxRight;
+        maxPathSumOfAllNodes = std::max(thisMaxPathSum, maxPathSumOfAllNodes);
 
-    // Return the max value from leaf to this node or 0, which ever is greater.
-    return std::max(0, root->val + std::max(maxLeft, maxRight));
+        // Return the max value from leaf to this node or 0, which ever is greater.
+        return root->val + std::max(maxLeft, maxRight);
   }
 
 };
