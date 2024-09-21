@@ -13,6 +13,8 @@ We use a max heap since we want to keep track of the kth smallest only.
 #include <vector>
 #include <cmath>
 
+// NOTE: This is a dumb way to do it. If we make a vector of vectors, then put the distance first, we can just use a priority queue
+// Look at NC's video if I'm not sure what I mean. Write an updated comment after I have implemented NC's solution.
 class Solution {
 public:
 
