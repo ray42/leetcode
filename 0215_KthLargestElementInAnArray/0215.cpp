@@ -11,6 +11,7 @@ We do four methods:
 #include <queue>
 #include <algorithm>
 #include <ranges>
+#include <iostream>
 
 // Time Complexity: O(nlog n) for the sort
 // Space: O(1) since we are not using any extra storage
@@ -70,60 +71,68 @@ class SolutionQuickSelect {
 public:
     int findKthLargest(std::vector<int>& nums, int k)
     {
-        return quickSelect(nums, 0, nums.size()-1,k);
-    }
+        // Partitions the portion of num indicated by the index L and R inclusively
+        // The element nums[R] will be chosen as the pivot
+        auto partition = [&nums](int Li, int Ri)-> int
+        {
+            auto p = nums[Ri];// pivot
 
-    auto quickSelect(std::vector<int>& v, int l, int r, int k)-> int
-    {
-        // partition the array and return the index of the pivot
-        auto partition = [](std::vector<int>& v, int l, int r){
-            
-            // Use the last element as the pivot
-            auto p = v[r];
+            // Next potential place for the LHS partition
+            auto Ii = Li;
 
-            // Next potential position of the left partition
-            auto i = l;
-
-            // Loop from left to one less than r, at each j, we check if we should move it to the 
-            // next potential left partition index i
-            for(auto j = l; j < r; ++j)
+            // Loop through [L,R), and keep putting elements into position I and updating I.
+            for(auto Ji = Li; Ji < Ri; ++Ji)
             {
-                if(v[j] <= p)
+                if(nums[Ji] <p)
                 {
-                    std::swap(v[j], v[i]);
-
-                    // Increment because this will be the next potential left partition position.
-                    ++i;
+                    // Put elements at position J into the next potential LHS position
+                    std::swap(nums[Ji], nums[Ii]);
+                    ++Ii;
                 }
+
             }
+            
+            // Put the pivot element in the correct place.
+            std::swap(nums[Ii], nums[Ri]);
 
-            // i is now where the pivot element should be, v[r] is the pivot element
-            std::swap(v[i], v[r]);
-
-            return i;
+            return Ii;
         };
 
-        auto pivotIndex = partition(v, l, r);
-        if(pivotIndex == k - 1)
+        auto quickSelect = [&nums, &partition](int Li, int Ri, int Ki, auto &&quickSelect) -> int
         {
-            return v[pivotIndex];
-        }
-        else if(k-1 < pivotIndex) // The required element (k-1) is to the left of the pivot.
-        {
-            return quickSelect(v,l,pivotIndex-1,k);
-        }
-        else
-        {
-            return quickSelect(v,pivotIndex-1,r,k);
-        }
+            auto Pi = partition(Li,Ri);
+
+            // If K = 1, it means we want the largest, i.e. when Pi = nums.size() - 1
+            // If K = 2, it means we want the second largest, i.e. when Pi = nums.size() - 2
+            // In other words, we can end when we get Pi = nums.size()-Ki
+            if(Pi == nums.size() - Ki)
+            {
+                return nums[Pi];
+            }
+            else if(nums.size() - Ki < Pi) // We look to the left of the pivot
+            {
+                return quickSelect(Li, Pi-1, Ki, quickSelect);
+            }
+            else
+            {
+                return quickSelect(Pi+1, Ri, Ki, quickSelect);
+            }
+            return 0;
+        };
+
+        return quickSelect(0, nums.size()-1,k, quickSelect);
     }
 };
 
-
 auto main(int argc, char* argv[]) -> int
 {
-    auto v = std::vector<int>{3,2,1,5,6,4};
-    auto iii = SolutionQuickSelect{}.findKthLargest(v, 2);
-    auto i = 42;
+    //auto v = std::vector<int>{3,2,1,5,6,4};
+    //auto iii = SolutionQuickSelect{}.findKthLargest(v, 2);
+    //auto i = 42;
+    auto factorial2 = [](int n, auto && factorial2) {
+        if (n == 1 || n==0) return n;
+        return n * factorial2(n - 1, factorial2);
+        };
+    std::cout << factorial2(5,factorial2) << std::endl;;
     return 0;
 }
