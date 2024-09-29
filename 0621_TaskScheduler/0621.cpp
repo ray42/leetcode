@@ -165,7 +165,7 @@ public:
 
             // Push the store for the next round.
             for(auto f : store)
-                pq.push(store);
+                pq.push(f);
 
             // Update the time, using the long ass logic I wrote above.
             time += pq.empty() ? numberOfTasksProcessed : n+1;
