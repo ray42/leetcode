@@ -69,8 +69,8 @@ public:
 
             currentSubset.push_back(nums[level]);
             backtrack(backtrack, nums, level + 1, allSubsets, currentSubset);
-
             currentSubset.pop_back();
+            
             backtrack(backtrack, nums, level + 1, allSubsets, currentSubset);
         };
 

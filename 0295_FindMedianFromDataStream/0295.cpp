@@ -130,13 +130,13 @@ public:
 
         if(lhsMaxHeap.size() == rhsMinHeap.size() + 2)
         {
-            lhsMaxHeap.push(rhsMinHeap.top());
-            rhsMinHeap.pop();
+            rhsMinHeap.push(lhsMaxHeap.top());
+            lhsMaxHeap.pop();
         }
         else if(rhsMinHeap.size() == lhsMaxHeap.size() +2)
         {
-            rhsMinHeap.push(lhsMaxHeap.top());
-            lhsMaxHeap.pop();
+            lhsMaxHeap.push(rhsMinHeap.top());
+            rhsMinHeap.pop();
         }
     }
     
