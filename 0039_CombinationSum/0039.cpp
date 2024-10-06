@@ -27,7 +27,7 @@ public:
                 resultCombinations.push_back(currentCombination);
                 return ;
             }
-            if(i > numCandidates || currentSum > target)
+            if(i >= numCandidates || currentSum > target)
             {
                 
                 return ;

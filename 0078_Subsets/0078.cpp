@@ -81,6 +81,45 @@ public:
 };
 
 
+
+class Solution {
+public:
+    auto subsets(const std::vector<int>& nums) -> std::vector<std::vector<int>>
+    {
+        auto ret = std::vector<std::vector<int>>{};
+
+        const auto numsSize = std::size(nums);
+
+        auto dfs = [&ret, &nums, &numsSize](auto&& dfs, int idx, std::vector<int>& currentSubset)
+        {
+            if(idx == numsSize)
+            {
+                ret.push_back(currentSubset);
+                return;
+            }
+
+            // Choose nums[idx]
+            currentSubset.push_back(nums[idx]);
+            dfs(dfs, idx+1, currentSubset);
+
+            // backtrack choose nums[idx]
+            currentSubset.pop_back();
+
+            // Do not choose nums[idx]
+            dfs(dfs, idx+1, currentSubset);
+
+            // No need to backtrack the last dfs call because 
+            // there is nothing to backtrack to return the currentSubset back to the state before this function is called.
+            // This is important to note because sometimes, we do have to backtrack the last recursive call.
+        };
+
+        auto currentSubset = std::vector<int>{};
+        dfs(dfs,0, currentSubset);
+        return ret;
+    }
+};
+
+
 auto main(int argc, char* argv[]) -> int
 {
     return 0;
