@@ -27,6 +27,9 @@ public:
                 resultCombinations.push_back(currentCombination);
                 return ;
             }
+
+            // A good way to remember that i has to be EQUAL TO OR GREATER than the number of candidates is that if
+            // we let i == numCandidates, then accessing candidates[i] will seg fault.
             if(i >= numCandidates || currentSum > target)
             {
                 
