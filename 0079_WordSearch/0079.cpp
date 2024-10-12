@@ -1,8 +1,3 @@
-#include <vector>
-#include <string>
-#include <set>
-
-
 //struct Coordinates
 //{
 //    int row{};
@@ -14,78 +9,120 @@
 // This is wrong, I'll need to come back and re-do it.
 // I used this solution: https://leetcode.com/problems/word-search/solutions/4965052/96-45-easy-solution-with-explanation/
 // I need to understand it, but ATM I am busy trying to get a grasp on system design first
+
+
+#include <vector>
+#include <string>
+#include <set>
+#include <unordered_set>
+#include <utility>
+
+//#include "../common/catch_amalgamated.hpp"
+
 class Solution {
 public:
-    auto exist(const std::vector<std::vector<char>>& board, const std::string& word) -> bool
+    bool exist(const std::vector<std::vector<char>>& board, const std::string& word)
     {
-        auto visited = std::set<std::pair<int,int>>{};
-        auto isExist = dfs(board,word,0,0,0,visited);
-        return isExist;
-    }
+        // We search in all four directions, matching the letters in "word". 
+        // If we have reached i = std::size(word), it means that all the previous entries 0, .. size-1 matches, 
+        // and so we have found the word.
 
-    auto dfs(
-        const std::vector<std::vector<char>>& board, 
-        const std::string& word, 
-        int i, // with letter
-        int r, int c, 
-        std::set<std::pair<int,int>>& visited) -> bool
-    {
-        const int nRows = board.size();
-        const int nCols = board[0].size();
-        if(std::min(r,c) < 0 ||
-           r == nRows || c == nCols ||
-           visited.contains({r,c})
-           )
-        {
-            return false;
-        }
+        const auto& wordSize = std::ssize(word);
+        const auto& boardRowSize = board.size();
+        const auto& boardColSize = board[0].size();
 
-        if(i == word.size()-1) // We are at the end of our word
+        auto pairHash = [](const std::pair<int,int>& p){
+            auto seed = p.first + p.second;
+
+            auto hasher = std::hash<int>{};
+            seed ^= hasher(p.first) + 0x9e3779b9 + (seed << 6) + (seed >>2);
+            seed ^= hasher(p.second) + 0x9e3779b9 + (seed << 6) + (seed >>2);
+            return seed;
+        };
+        auto visited = std::unordered_set<std::pair<int,int>, decltype(pairHash)>{};
+
+        auto backtrack = [&](auto&& backtrack, int rowi, int colj, int wordi)
         {
-            if(board[r][c] == word[i])
+            // We have previously considered all the letters 0..size-1, so we can return true.
+            if(wordi == wordSize)
             {
                 return true;
             }
-            else
+
+            // Have we gone out of bounds (but still haven't finished find the word) or if this has already been visited?
+            // we can think of these as the physical walls bounding us, yes, a visited square is a wall. Think of the game snake.
+            if(rowi < 0 || colj < 0 || rowi >=boardRowSize || colj >= boardColSize || visited.contains({rowi, colj}))
             {
                 return false;
             }
+            // If the letter is incorrect, return false;
+            if(board[rowi][colj] != word[wordi])
+            {
+                return false;
+            }
+
+            // We now know that this is a valid square to visit, and the letter in this square matches what's in word.
+            // So we can mark this square as visited and advance in all four directions.
+
+            visited.insert({rowi,colj});
+
+            const auto nextLetter = wordi+1;
+            auto exists = backtrack(backtrack,rowi + 1, colj, nextLetter) || // right 
+                          backtrack(backtrack,rowi - 1, colj, nextLetter) || // left
+                          backtrack(backtrack,rowi, colj + 1, nextLetter) || // up
+                          backtrack(backtrack,rowi, colj - 2, nextLetter);   // down
+
+            // If exists is true, it means that the end of the word is reachable from this square, so we return true.
+            if(exists) return true;
+
+            // Otherwise, we have to backtrack by un-visiting this square
+            visited.erase({rowi,colj});
+
+            return false;
+        };
+
+        // calling backtrack(0,0) will start the search from 0,0, but we need to search starting from all squares
+        for(auto i = 0; i < boardRowSize; ++i)
+        {
+            for(auto j = 0; j < boardColSize; ++j)
+            {
+                if(backtrack(backtrack, i,j, 0))
+                {
+                    return true;
+                }
+            }
         }
+        
 
-        // Otherwise, keep on tracking
-
-        visited.emplace(r,c);
-
-        // If the current letter on the board matches the letter in word, then we want to check the next letter.
-        if(board[r][c] == word[i]) ++i;
-
-        auto exists = false;
-
-        exists |= dfs(board,word,i,r+1,c,visited);
-        exists |= dfs(board,word,i,r-1,c,visited);
-        exists |= dfs(board,word,i,r,c+1,visited);
-        exists |= dfs(board,word,i,r,c-1,visited);
-
-        visited.erase({r,c});
-
-        return exists;
-
+        return false;
     }
 };
 
 
+//unsigned int Factorial( unsigned int number ) {
+//    return number <= 1 ? number : Factorial(number-1)*number;
+//}
+//
+//TEST_CASE( "Factorials are computed", "[factorial]" ) {
+//    REQUIRE( Factorial(1) == 1 );
+//    REQUIRE( Factorial(2) == 2 );
+//    REQUIRE( Factorial(3) == 6 );
+//    REQUIRE( Factorial(10) == 3628800 );
+//}
+
+
 auto main(int argc, char* argv) -> int
 {
-    //auto ss = std::vector<std::vector<char>>{
-    //    {'A','B','C','E'},
-    //    {'S','F','C','S'},
-    //    {'A','D','E','E'}
-    //};
-
     auto ss = std::vector<std::vector<char>>{
-        {'A','B'},
+        {'A','B','C','E'},
+        {'S','F','C','S'},
+        {'A','D','E','E'}
     };
-    auto sss = Solution{}.exist(ss,"BA");
+
+    //auto ss = std::vector<std::vector<char>>{
+    //    {'A','B'},
+    //};
+    auto sss = Solution{}.exist(ss,"ABCCED");
     return 0;
 }
 
