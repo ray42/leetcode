@@ -20,7 +20,7 @@ public:
         auto currentCombination = std::vector<int>{};
         auto resultCombinations = std::vector<std::vector<int>>{};
         const auto numCandidates = std::ssize(candidates);
-        auto backtrack = [&candidates, &target, &numCandidates, &currentCombination, &resultCombinations](auto&& backtrack, const int i, const int currentSum){
+        auto backtrack = [&](auto&& backtrack, const int i, const int currentSum){
 
             if(currentSum == target)
             {

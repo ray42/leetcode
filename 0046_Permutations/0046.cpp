@@ -4,6 +4,7 @@
 
 
 #include <vector>
+#include <type_traits>
 
 class Solution {
 public:
@@ -36,6 +37,49 @@ private:
         }
     }
 };
+
+
+
+
+
+
+
+class SolutionPractice {
+public:
+    auto permute(std::vector<int>& nums) -> std::vector<std::vector<int>>
+    {
+        
+        auto allPerms = std::vector<std::vector<std::remove_cvref_t<decltype(nums)>::value_type>>{};
+        const auto& numsSize = std::ssize(nums);
+
+        auto dfs = [&](auto&& dfs, int idxToSwap)
+        {
+            if(idxToSwap == numsSize - 1)
+            {
+                // We don't swap the last one, so we can just add the result and return;
+                allPerms.push_back(nums);
+                return;
+            }
+
+            for(auto j = idxToSwap; j < numsSize; ++j)
+            {
+                std::swap(nums[idxToSwap], nums[j]);
+                // Continue on to the next index to swap
+
+                dfs(dfs, idxToSwap+1);
+                
+                // backtrack
+                std::swap(nums[j], nums[idxToSwap]);
+            }
+            
+        };
+
+        dfs(dfs, 0);
+
+        return allPerms;
+    }
+};
+
 
 auto main(int argc, char* argv[]) -> int
 {
