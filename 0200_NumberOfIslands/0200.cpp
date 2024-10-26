@@ -207,10 +207,6 @@ public:
                     grid[rrdr][ccdc] = '0';
                 }
             }
-
-
-
-
         };
 
         auto nIslands = 0;
