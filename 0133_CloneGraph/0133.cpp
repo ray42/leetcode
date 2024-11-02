@@ -35,6 +35,7 @@ visited it before and so we must put it in the queue/stack.
 
 Using this method, we are creating the map at the same time as generating the adjacency list, in one pass.
 
+
 */
 
 #include <stack>
@@ -65,6 +66,8 @@ public:
 };
 
 
+// Space: O(N) for the node map, where N is the number of nodes.
+// Time: O(N) - we loop through the contents of the map only.
 class SolutionTwoPass {
 public:
 
@@ -112,6 +115,8 @@ public:
     }
 };
 
+// Space: O(N) for the node map, where N is the number of nodes.
+// Time: O(N) - we loop through the contents of the map only.
 class SolutionOnePass {
 public:
 
@@ -150,6 +155,9 @@ public:
 /*
 this solution is basically the same as the above, however, we create the nodes (including the adjacency list) recursively.
 We still use a map to make sure that we don't re-create nodes. That is, if a node exists in the map, we simply return it.
+
+// Space: O(N) for the node map, where N is the number of nodes.
+// Time: O(N) - this is just the recursive version of the above.
 */
 class SolutionRecursiveDfs {
 public:
