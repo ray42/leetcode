@@ -283,7 +283,7 @@ public:
             }
         }
 
-        return {};
+        return reachedBothOceans;
     }
 };
 
