@@ -51,6 +51,7 @@ Notes and solution:
 
 #include <vector>
 #include <stack>
+#include <queue>
 
 /*
 We need to create the: 
@@ -147,7 +148,7 @@ public:
 
         auto cycleFound = false;
 
-        // Performs a topologiocal sort itreratively
+        // Performs a topological sort iteratively
         // stop the sort if a cycle is found and sets cycleFound = true
         auto topoSort = [&](int node) -> void
         {
@@ -155,20 +156,20 @@ public:
 
             stack.push(node);
 
-            while(!stack.empty())
-            {
-                auto currentNode = stack.top();
-                stack.pop();
-
-                for(const auto adjNode : graph[currentNode])
-                {
-                    if(pathVisited[adjNode])
-                    {
-                        cycleFound = true;
-                        return ;
-                    }
-                }
-            }
+            //while(!stack.empty())
+            //{
+            //    auto currentNode = stack.top();
+            //    stack.pop();
+//
+            //    for(const auto adjNode : graph[currentNode])
+            //    {
+            //        if(pathVisited[adjNode])
+            //        {
+            //            cycleFound = true;
+            //            return ;
+            //        }
+            //    }
+            //}
         };
 
 
@@ -186,12 +187,67 @@ public:
 };
 
 
+/*
+kahn's algorithm:
+0) If the input graph isn't in an adjacency list, put it in an adjacency list
+1) Create a store of the in-orders. Also at this stage, if the in-order is 0, put it in the queue for the BFS
+2) while the queue is not empty...
+  2.1) pop of the queue and add this node to the topo sort list.
+  2.2) For each outgoing edge from the removed node, decrement the in-degree of the destination node by 1 
+  2.3) If the in-degree of a destination node becomes 0, add it to the queue.
+3) If the queue is empty and there are still nodes in the graph, the graph contains a cycle and cannot be topologically sorted.
+4) The nodes in the queue represent the topological ordering of the graph.
 
+Note: We can easily check if there are still nodes in the graph by checking if the resultant topological sort has the 
+      same number of nodes as the graph, if it's less, then there are still nodes on the graph.
+*/
 class SolutionBfsKahn {
 public:
     auto canFinish(int numCourses, const std::vector<std::vector<int>>& prerequisites) -> bool
     {
-        
+        // Create the adjacency list representation of the graph.
+        // We can also setup the inorder!
+        auto graph = std::vector<std::vector<int>>(numCourses);
+        auto inorder = std::vector<int>(numCourses);
+        for(const auto& p : prerequisites)
+        {
+            graph[p[1]].push_back(p[0]);
+
+            // p[1] -> p[0] implies that the inorder of p0 has increased by 1.
+            ++inorder[p[0]];
+        }
+
+        // Put all inorder 0 into the queue
+        auto queue = std::queue<int>{};
+        for(auto i = 0; i < numCourses; ++i)
+        {
+            if(inorder[i] == 0)
+            {
+                queue.push(i);
+            }
+        }
+
+        auto topologicalOrdering = std::vector<int>{};
+        while(!queue.empty())
+        {
+            const auto currentNode = queue.front();
+            queue.pop();
+            topologicalOrdering.push_back(currentNode);
+
+            // Since we have "removed" the current node, we decrement all the nodes it's going into.
+            // We get these by looking at it's adjacency list
+            for(const auto adjacentNode : graph[currentNode])
+            {
+                --inorder[adjacentNode];
+                if(inorder[adjacentNode] == 0)
+                {
+                    queue.push(adjacentNode);
+                }
+            }
+        }
+
+        // if a topological sort exists, then topologicalOrdering.size() == numCourses, so we return true
+        return topologicalOrdering.size() == numCourses;
     }
 };
 
