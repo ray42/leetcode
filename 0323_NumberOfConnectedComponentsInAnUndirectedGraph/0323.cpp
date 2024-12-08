@@ -155,9 +155,9 @@ public:
     struct UnionFind
     {
 
-        std::unordered_map<int,int> parent;
-        std::unordered_map<int,int> rank;
-        std::unordered_map<int,int> size;
+        std::unordered_map<int,int> parent{};
+        std::unordered_map<int,int> rank{};
+        std::unordered_map<int,int> size{};
 
         int nComponents;
 
