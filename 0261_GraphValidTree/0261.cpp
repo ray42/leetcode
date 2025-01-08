@@ -203,9 +203,9 @@ public:
         // e.g. if we union two trees with root nodes 1 (of size 2) and root node 5 (of size 3), then in our size map, we have:
         // 1 -> 2
         // 5 -> 3
-        // After the union, we will have:
-        // 1 -> 5
-        // 5 -> 3
+        // After the union (we merge 1 into 5 because we always merge the smaller one into the bigger one), we will have:
+        // 1 -> 2
+        // 5 -> 5
         // this is because the two trees have merged with 1 being the root. But we have no need to update the 5->3 entry, since we will not use it anymore.
         // See https://takeuforward.org/data-structure/disjoint-set-union-by-rank-union-by-size-path-compression-g-46/
         std::unordered_map<int,int> size{};
