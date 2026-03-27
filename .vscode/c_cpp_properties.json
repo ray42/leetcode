@@ -4,9 +4,9 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${vcpkgRoot}/x64-windows/include",
-                "${vcpkgRoot}/x86-windows-utc-default/include",
-                "${vcpkgRoot}/x86-windows-utc-static/include"
+                "D:/vcpkgall/vcpkg_2026_03/installed/x64-windows/include",
+                "D:/vcpkgall/vcpkg_2026_03/installed/x86-win-utc/include",
+                "D:/vcpkgall/vcpkg_2026_03/installed/x86-win-utc-static/include"
             ],
             "defines": [
                 "_DEBUG",
