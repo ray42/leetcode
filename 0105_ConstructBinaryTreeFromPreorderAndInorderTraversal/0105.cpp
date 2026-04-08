@@ -50,6 +50,7 @@ Neetcode's code is very similar to mine, but with better iterator manipulation
 */
 
 #include <vector>
+#include <iostream>
 
 // Definition for a binary tree node.
 struct TreeNode {
@@ -107,7 +108,32 @@ public:
 
 auto main()->int
 {
-    auto s = Solution{}.buildTree({1, 2, 4, 5, 3, 6, 7},{4, 2, 5, 1, 6, 3, 7});
+    //auto s = Solution{}.buildTree({1, 2, 4, 5, 3, 6, 7},{4, 2, 5, 1, 6, 3, 7});
+
+
+//        1
+//       / \
+//      2   3
+//     / \   \
+//    4   5   6
+
+    auto tn1 = TreeNode{1};
+    auto tn2 = TreeNode{2};
+    auto tn3 = TreeNode{3};
+    auto tn4 = TreeNode{4};
+    auto tn5 = TreeNode{5};
+    auto tn6 = TreeNode{6};
+
+    tn1.left = &tn2;
+    tn1.right = &tn3;
+    tn2.left = &tn4;
+    tn2.right = &tn5;
+    tn3.right = &tn6;
+
+
+    std::cout << "Tree constructed successfully." << std::endl;
+
+
     return 0;
 }
 
