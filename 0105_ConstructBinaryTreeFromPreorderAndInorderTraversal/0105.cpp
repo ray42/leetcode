@@ -51,6 +51,10 @@ Neetcode's code is very similar to mine, but with better iterator manipulation
 
 #include <vector>
 #include <iostream>
+#include <vector>
+#include <stack>
+
+using namespace std;
 
 // Definition for a binary tree node.
 struct TreeNode {
@@ -106,6 +110,37 @@ public:
     }
 };
 
+
+vector<int> postorderIterativeOneStack(TreeNode* root) {
+  vector<int> result;
+  stack<TreeNode*> st;
+  TreeNode* curr = root;
+  TreeNode* lastVisited = nullptr;
+
+  while (curr != nullptr || !st.empty()) {
+    // Go as far left as possible
+    while (curr != nullptr) {
+      st.push(curr);
+      curr = curr->left;
+    }
+
+    TreeNode* node = st.top();
+
+    // If right child exists and hasn't been visited yet,
+    // move to the right subtree
+    if (node->right != nullptr && lastVisited != node->right) {
+      curr = node->right;
+    } else {
+      // Otherwise, visit the node
+      result.push_back(node->val);
+      lastVisited = node;
+      st.pop();
+    }
+  }
+
+  return result;
+}
+
 auto main()->int
 {
     //auto s = Solution{}.buildTree({1, 2, 4, 5, 3, 6, 7},{4, 2, 5, 1, 6, 3, 7});
@@ -116,6 +151,12 @@ auto main()->int
 //      2   3
 //     / \   \
 //    4   5   6
+
+//  Traversal results:
+// - **Preorder (Root, Left, Right)** -> `1 2 4 5 3 6`
+// - **Inorder (Left, Root, Right)** -> `4 2 5 1 3 6`
+// - **Postorder (Left, Right, Root)** -> `4 5 2 6 3 1`
+// - **Level Order** -> `1 2 3 4 5 6`
 
     auto tn1 = TreeNode{1};
     auto tn2 = TreeNode{2};
@@ -130,8 +171,14 @@ auto main()->int
     tn2.right = &tn5;
     tn3.right = &tn6;
 
+    auto postorder = postorderIterativeOneStack(&tn1);
+    for(const auto v : postorder)    {
+        std::cout << v << " ";
+    }
+    std::cout << std::endl;
 
-    std::cout << "Tree constructed successfully." << std::endl;
+
+    
 
 
     return 0;
