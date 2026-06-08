@@ -6,5 +6,6 @@
 *.ilk
 *.obj
 *.pdb
-
+*.vcxproj.user
+.vs/
 
