@@ -75,8 +75,10 @@ public:
     }
 };
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto iii = Solution{}.dailyTemperatures({30,50,50,60});
     return 0;
 }
+*/

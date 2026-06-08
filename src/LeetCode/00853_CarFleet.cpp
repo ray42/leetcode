@@ -94,10 +94,12 @@ public:
     }
 };
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto iii = Solution{}.carFleet(100, {0,2,4}, {4,2,1});
     auto ii = 9;
     return 0;
 }
+*/
 

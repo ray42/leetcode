@@ -64,8 +64,10 @@ private:
  * string param_2 = obj->highestRated(cuisine);
  */
 
+/*
 auto main(int argc, char * argv[]) -> int
 {
     return 0;
 }
+*/
 

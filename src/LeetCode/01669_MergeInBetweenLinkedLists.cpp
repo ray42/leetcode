@@ -61,6 +61,7 @@ auto getList(const std::vector<int>& vec)->LnPtr
     return head;
 }
 
+/*
 auto main(int argc, char* argv[])-> int
 {
     auto l1 = getList({0,1,2,3,4,5,6});
@@ -75,4 +76,5 @@ auto main(int argc, char* argv[])-> int
 
     return 0;
 }
+*/
 

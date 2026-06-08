@@ -29,9 +29,11 @@ public:
     }
 };
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     //Solution{}.rearrangeArray({3,1,-2,-5,2,-4});
     Solution{}.rearrangeArray({});
     return 0;
 }
+*/

@@ -204,10 +204,12 @@ public:
 };
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto aaaa = Solution{}.checkInclusion("ab", "eidbaooo");
     return 0;
 }
+*/
 
 

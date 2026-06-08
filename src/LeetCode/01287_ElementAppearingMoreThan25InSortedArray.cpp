@@ -31,9 +31,11 @@ public:
     }
 };
 
+/*
 auto main(int argc, char * argv[]) -> int
 {
     auto ii = Solution{}.findSpecialInteger({1,2,3,3});
     std::cout << ii << std::endl;
     return 0;
 }
+*/

@@ -60,10 +60,12 @@ public:
 };
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto ii = Solution{}.kClosest({{1,3},{-2,2}}, 1);
     auto iii = 42;
     return 0;
 }
+*/
 

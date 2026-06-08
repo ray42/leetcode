@@ -46,10 +46,12 @@ public:
 };
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto sss = Solution{}.sortedSquares({-4,-1,0,3,10});
     return 0;
 }
+*/
 
 

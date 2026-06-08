@@ -201,10 +201,12 @@ public:
     }
 };
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     //auto sss = Solution{}.characterReplacement("ABAB", 2);
     auto sss = Solution{}.characterReplacement("AABABBA", 1);
     return 0;
 }
+*/
 

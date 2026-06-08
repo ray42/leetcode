@@ -70,6 +70,7 @@ public:
 
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     // [1,2,3,4,5]
@@ -90,4 +91,5 @@ auto main(int argc, char* argv[]) -> int
 
     return 0;
 }
+*/
 

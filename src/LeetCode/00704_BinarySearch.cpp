@@ -31,8 +31,10 @@ public:
 };
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto iii = Solution{}.search({5}, 5);
     return 0;
 }
+*/

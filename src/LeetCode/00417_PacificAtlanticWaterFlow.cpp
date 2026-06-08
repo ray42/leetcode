@@ -290,6 +290,7 @@ public:
 
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto grid = std::vector<std::vector<int>>{
@@ -303,3 +304,4 @@ auto main(int argc, char* argv[]) -> int
 
     return 0;
 }
+*/

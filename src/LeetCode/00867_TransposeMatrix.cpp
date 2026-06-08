@@ -45,6 +45,7 @@ public:
     }
 };
 
+/*
 auto main(int argc, char * argv[]) -> int
 {
     auto mat = MatType{};
@@ -55,3 +56,4 @@ auto main(int argc, char * argv[]) -> int
     std::cout << toStr(Solution{}.transpose(mat)) << std::endl;
     return 0;
 }
+*/

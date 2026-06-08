@@ -104,10 +104,12 @@ public:
     }
 };
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto iii = Solution{}.minEatingSpeed({805306368,805306368,805306368},1000000000);
     auto iiii = 42;
     return 0;
 }
+*/
 

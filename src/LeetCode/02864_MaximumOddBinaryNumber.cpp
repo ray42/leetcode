@@ -30,11 +30,13 @@ public:
 };
 
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto str = std::string{"010"};
     auto sss = Solution{}.maximumOddBinaryNumber(str);
     return 0;
 }
+*/
 
 

@@ -9,3 +9,5 @@
 *.vcxproj.user
 .vs/
 
+src/x64/
+src/LeetCode/x64

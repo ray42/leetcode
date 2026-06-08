@@ -47,6 +47,7 @@ public:
     }
 };
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     auto a = 3.14;
@@ -54,4 +55,5 @@ auto main(int argc, char* argv[]) -> int
     std::cout << "a%1 is: " <<  b << '\n';
     return 0;
 }
+*/
 

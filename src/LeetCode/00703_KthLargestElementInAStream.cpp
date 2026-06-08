@@ -65,8 +65,10 @@ public:
  * int param_1 = obj->add(val);
  */
 
+/*
 auto main(int argc, char* argv[]) -> int
 {
     return 0;
 }
+*/
 
