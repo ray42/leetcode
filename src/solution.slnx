@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="LeetCode/LeetCode.vcxproj" />
+  <Project Path="LeetCode/LeetCode.vcxproj" Id="2ea71c88-25b3-4083-b451-ad68098b26d5" />
 </Solution>

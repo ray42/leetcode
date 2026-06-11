@@ -1,0 +1,5 @@
+/* Visual Studio Settings File */
+{
+  "languages.defaults.tabs.indentSize": 2,
+  "languages.cpp.tabs.indentSize": 2
+}
