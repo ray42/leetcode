@@ -15,7 +15,7 @@ RayNotes
 #include <string>
 #include <unordered_map>
 
-class Solution {
+class Solution1897 {
 public:
     auto makeEqual(const std::vector<std::string>& words) -> bool
     {

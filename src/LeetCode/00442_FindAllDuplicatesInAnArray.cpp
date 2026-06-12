@@ -25,7 +25,7 @@ Constraints:
     been turned negative and we need to -1 since the range is
     1 <= nums[i] <= n and the index of nums is 0<=index<=n-1.
 */
-class Solution {
+class Solution442 {
 public:
     auto findDuplicates(std::vector<int>& nums) -> std::vector<int>
     {
@@ -54,7 +54,7 @@ public:
 auto main(int argc, char* argv[]) -> int
 {
     auto iii = std::vector<int>{4,3,2,7,8,2,3,1};
-    auto ii = Solution{}.findDuplicates(iii);
+    auto ii = Solution442{}.findDuplicates(iii);
     return 0;
 }
 */

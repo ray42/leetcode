@@ -2,7 +2,7 @@
 #include <unordered_map>
 #include <algorithm>
 
-class Solution {
+class Solution1481 {
 public:
     auto findLeastNumOfUniqueInts(const std::vector<int>& arr, int k) -> int
     {

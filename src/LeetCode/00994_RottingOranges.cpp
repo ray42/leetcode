@@ -43,7 +43,7 @@ Explanation: Since there are already no fresh oranges at minute 0, the answer is
 #include <queue>
 
 
-class Solution {
+class Solution994 {
 public:
     auto orangesRotting(std::vector<std::vector<int>>& grid) -> int
     {

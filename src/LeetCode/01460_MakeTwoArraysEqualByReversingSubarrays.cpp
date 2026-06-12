@@ -1,7 +1,7 @@
 #include <vector>
 #include <array>
 
-class Solution {
+class Solution1460 {
 public:
     bool canBeEqual(std::vector<int>& target, std::vector<int>& arr) 
     {

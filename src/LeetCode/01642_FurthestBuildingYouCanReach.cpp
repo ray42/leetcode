@@ -3,7 +3,7 @@ https://leetcode.com/problems/furthest-building-you-can-reach/description/
 */
 #include <vector>
 
-class Solution {
+class Solution1642 {
 public:
     auto furthestBuilding(const std::vector<int>& heights, int bricks, int ladders) -> int
     {

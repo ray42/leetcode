@@ -9,7 +9,7 @@ Easy https://leetcode.com/problems/baseball-game/
 #include <algorithm>
 #include <cctype>
 
-class Solution {
+class Solution682 {
 public:
     auto calPoints(std::vector<std::string>& operations) -> int
     {

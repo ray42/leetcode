@@ -2,7 +2,7 @@
 #include <type_traits>
 #include <cmath>
 
-class Solution {
+class Solution977 {
 public:
 
     // We need to return the squared values in non-decreasing order.
@@ -49,7 +49,7 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    auto sss = Solution{}.sortedSquares({-4,-1,0,3,10});
+    auto sss = Solution977{}.sortedSquares({-4,-1,0,3,10});
     return 0;
 }
 */

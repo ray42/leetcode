@@ -27,7 +27,7 @@ But we know all this by checking if water can flow from cell 1 to cell 4 because
 
 Look at the below solution for the correct way to do it.
 */
-class SolutionWrong
+class Solution417_Wrong
 {
 
 public:
@@ -174,7 +174,7 @@ Finally, we loop through all the cells in both and return a vector of the cells 
 
 Instead of using two visited grid, we can use one and have a bit field.
 */
-class Solution {
+class Solution417 {
 public:
 
     enum options : int

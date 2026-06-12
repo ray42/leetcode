@@ -26,7 +26,7 @@ auto toStr(const MatType& matrix) -> std::string
     return ss.str();
 }
 
-class Solution {
+class Solution867 {
 public:
     auto transpose(const MatType& matrix) -> MatType
     {
@@ -53,7 +53,7 @@ auto main(int argc, char * argv[]) -> int
     mat.push_back({4,5,6});
     mat.push_back({7,8,9});
     std::cout << toStr(mat) << std::endl;
-    std::cout << toStr(Solution{}.transpose(mat)) << std::endl;
+    std::cout << toStr(Solution867{}.transpose(mat)) << std::endl;
     return 0;
 }
 */

@@ -10,7 +10,7 @@ Medium https://leetcode.com/problems/sort-characters-by-frequency/description/
 // NOTE: Do this again but with a priority queue
 // https://leetcode.com/problems/sort-characters-by-frequency/solutions/4689154/beats-100-users-c-java-python-javascript-2-approaches-explained/
 
-class Solution 
+class Solution451 
 {
 public:
     auto frequencySort(std::string& s) -> std::string

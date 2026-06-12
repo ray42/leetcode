@@ -1,6 +1,6 @@
 #include <vector>
 
-class Solution {
+class Solution1550 {
 public:
     auto threeConsecutiveOdds(const std::vector<int>& arr) -> bool
     {

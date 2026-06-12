@@ -10,7 +10,7 @@ Easy: https://leetcode.com/problems/unique-number-of-occurrences/description/
 #include <utility>
 #include <vector>
 
-class Solution 
+class Solution1207 
 {
 public:
 

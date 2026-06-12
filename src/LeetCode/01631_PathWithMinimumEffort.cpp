@@ -121,7 +121,7 @@ What is the complexity of the DFS method? A big upper bound would be 2^(MN), whi
 #include <utility>
 #include <unordered_set>
 
-class Solution {
+class Solution1631 {
 public:
     auto minimumEffortPath(const std::vector<std::vector<int>>& heights) -> int
     {
@@ -198,7 +198,7 @@ auto main(int argc, char* argv[]) -> int
      {3,8,2},
      {5,3,5}};
 
-     Solution{}.minimumEffortPath(in1);
+     Solution1631{}.minimumEffortPath(in1);
 
     return 0;
 }

@@ -7,7 +7,7 @@ EASY https://leetcode.com/problems/destination-city/
 #include <vector>
 #include <unordered_map>
 
-class Solution {
+class Solution1436 {
 public:
     auto destCity(const std::vector<std::vector<std::string>>& paths) -> std::string
     {

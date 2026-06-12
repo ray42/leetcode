@@ -28,7 +28,7 @@ Also, we need to check if the visited number of nodes == n,
 #include <queue>
 #include <utility>
 
-class Solution {
+class Solution743 {
 public:
     auto networkDelayTime(std::vector<std::vector<int>>& times, int n, int k) -> int
     {

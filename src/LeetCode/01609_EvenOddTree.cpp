@@ -13,7 +13,7 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
-class Solution {
+class Solution1609 {
 public:
     // A binary tree is named Even-Odd if it meets the following conditions:
     // 1) The root of the binary tree is at level index 0, its children are at level index 1, their children are at level index 2, etc.

@@ -5,7 +5,7 @@ https://leetcode.com/problems/find-polygon-with-the-largest-perimeter/
 #include <algorithm>
 #include <numeric>
 
-class Solution 
+class Solution2971 
 {
 public:
 using ll = long long;

@@ -13,7 +13,7 @@ skipping any empty rows.
 #include <string>
 #include <algorithm>
 
-class Solution {
+class Solution2125 {
 public:
     auto numberOfBeams(const std::vector<std::string>& bank) -> int
     {

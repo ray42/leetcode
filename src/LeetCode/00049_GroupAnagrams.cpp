@@ -1,13 +1,14 @@
 
-#include <vector>
-#include <string>
 #include <algorithm>
-#include <unordered_map>
-#include <ranges>
-#include <utility>
 #include <array>
+#include <ranges>
+#include <string>
+#include <type_traits>
+#include <unordered_map>
+#include <utility>
+#include <vector>
 
-class Solution {
+class Solution49 {
 public:
   std::vector<std::vector<std::string>> groupAnagrams(const std::vector<std::string>& strs) const {
 
@@ -41,7 +42,7 @@ public:
 };
 
 // More efficient solution using character count as key instead of sorting the string
-class Solution {
+class Solution49_2 {
 public:
   std::vector<std::vector<std::string>> groupAnagrams(const std::vector<std::string>& strs) const {
 
@@ -50,7 +51,7 @@ public:
       size_t operator()(const std::array<int, 26>& arr) const {
         size_t hash = 0;
         for (int i : arr) {
-          hash = hash * 31 + std::hash<int>()(i);
+          hash = hash * 31 + std::hash<int>{}(i);
         }
         return hash;
       }

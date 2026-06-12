@@ -1,7 +1,7 @@
 
 #include <vector>
 
-class Solution {
+class Solution930 {
 public:
     auto numSubarraysWithSum(std::vector<int>& nums, int goal) -> int
     {

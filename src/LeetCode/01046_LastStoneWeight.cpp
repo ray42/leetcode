@@ -2,7 +2,7 @@
 #include <vector>
 #include <queue>
 
-class Solution {
+class Solution1046 {
 public:
     int lastStoneWeight(std::vector<int>& stones)
     {

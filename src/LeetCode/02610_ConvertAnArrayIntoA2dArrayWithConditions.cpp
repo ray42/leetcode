@@ -4,7 +4,7 @@ Medium: https://leetcode.com/problems/convert-an-array-into-a-2d-array-with-cond
 #include <vector>
 #include <unordered_set>
 
-class Solution {
+class Solution2610 {
 public:
     auto findMatrix(const std::vector<int>& nums) -> std::vector<std::vector<int>>
     {

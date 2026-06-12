@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <iterator>
 
-class Solution {
+class Solution1929 {
 public:
     auto getConcatenation(std::vector<int>& nums) -> std::vector<int>
     {

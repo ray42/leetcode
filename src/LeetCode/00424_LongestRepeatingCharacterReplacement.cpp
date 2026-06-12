@@ -21,7 +21,7 @@ The substring "BBBB" has the longest repeating letters, which is 4.
 There may exists other ways to achieve this answer too.
 
 ------------------------
-Solution notes:
+Solution424 notes:
 
 So, we use a sliding window approach.
 ABAB
@@ -111,7 +111,7 @@ length - maxf <= k still holds true.
 #include <unordered_map>
 #include <algorithm>
 
-class Solution {
+class Solution424 {
 public:
     auto characterReplacement(const std::string& s, int k) -> int
     {
@@ -163,7 +163,7 @@ public:
 
 // Same as above but with maxFrequency optimisation
 // Recall that we only need to calculate the max frequency if it changes
-class SolutionOptimised {
+class Solution424_Optimised {
 public:
     auto characterReplacement(const std::string& s, int k) -> int
     {
@@ -204,8 +204,8 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    //auto sss = Solution{}.characterReplacement("ABAB", 2);
-    auto sss = Solution{}.characterReplacement("AABABBA", 1);
+    //auto sss = Solution424{}.characterReplacement("ABAB", 2);
+    auto sss = Solution424{}.characterReplacement("AABABBA", 1);
     return 0;
 }
 */

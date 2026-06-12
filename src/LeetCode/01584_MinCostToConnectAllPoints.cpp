@@ -20,7 +20,7 @@ We can use prims or kruskals. I will implement both.
 #include <ranges>
 #include <algorithm>
 
-class SolutionPrims {
+class Solution1584_Prims {
 public:
     auto minCostConnectPoints(const std::vector<std::vector<int>>& points) -> int
     {
@@ -90,7 +90,7 @@ public:
 
 
 // NOTE: There is a bug here but I cba to fix it now. Will fix it when I come back to do this again.
-class SolutionKruskal {
+class Solution1584_Kruskal {
 public:
 
     struct UnionFind

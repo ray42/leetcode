@@ -50,7 +50,7 @@ otherwise, it is equal so we return immediately.
 #include <algorithm>
 
 using ll = long long;
-class Solution {
+class Solution875 {
 public:
     int minEatingSpeed(const std::vector<int>& piles, int h)
     {
@@ -107,7 +107,7 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    auto iii = Solution{}.minEatingSpeed({805306368,805306368,805306368},1000000000);
+    auto iii = Solution875{}.minEatingSpeed({805306368,805306368,805306368},1000000000);
     auto iiii = 42;
     return 0;
 }

@@ -59,7 +59,7 @@ Write about how we use dijstras and about the functions to add the value into th
 #include <unordered_set>
 #include <utility>
 
-class Solution {
+class Solution778 {
 public:
 
     struct PairHash
@@ -129,7 +129,7 @@ public:
 /*
 auto main(int argc, char* argv[])->int
 {
-    auto iii = Solution{}.swimInWater(std::vector<std::vector<int>>{});
+    auto iii = Solution778{}.swimInWater(std::vector<std::vector<int>>{});
     return 0;
 }
 */

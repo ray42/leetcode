@@ -15,7 +15,7 @@ struct TreeNode {
 };
 
 
-class Solution {
+class Solution872 {
 public:
     auto leafSimilar(TreeNode* root1, TreeNode* root2) -> bool
     {

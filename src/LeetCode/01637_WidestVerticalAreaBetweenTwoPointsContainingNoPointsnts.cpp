@@ -8,7 +8,7 @@ Find largest horizontal distance between two adjacent points.
 #include <algorithm>
 #include <vector>
 
-class Solution 
+class Solution1637 
 {
 public:
     int maxWidthOfVerticalArea(std::vector<std::vector<int>>& points) 

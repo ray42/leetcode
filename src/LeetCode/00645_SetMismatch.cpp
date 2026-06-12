@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-class Solution {
+class Solution645 {
 public:
     auto findErrorNums(std::vector<int>& nums) -> std::vector<int>
     {

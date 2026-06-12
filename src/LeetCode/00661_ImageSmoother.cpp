@@ -5,7 +5,7 @@ EASY: https://leetcode.com/problems/image-smoother/
 
 #include <vector>
 
-class Solution 
+class Solution661 
 {
 public:
 

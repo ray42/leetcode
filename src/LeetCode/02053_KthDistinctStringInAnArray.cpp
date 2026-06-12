@@ -3,7 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-class Solution {
+class Solution2053 {
 public:
     std::string kthDistinct(std::vector<std::string>& arr, int k)
     {

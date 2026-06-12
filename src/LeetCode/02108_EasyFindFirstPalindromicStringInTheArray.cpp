@@ -3,7 +3,7 @@
 #include <vector>
 #include <algorithm>
 
-class Solution {
+class Solution2108 {
 public:
     auto firstPalindrome(const std::vector<std::string>& words) -> std::string
     {

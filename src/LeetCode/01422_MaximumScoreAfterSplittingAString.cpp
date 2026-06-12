@@ -28,7 +28,7 @@ Complexity: n
 #include <string>
 #include <algorithm>
 
-class Solution 
+class Solution1422 
 {
 public:
     auto maxScore(const std::string& s) -> int
@@ -58,7 +58,7 @@ public:
     }
 };
 
-class Solution2 
+class Solution1422_2 
 {
 public:
     auto maxScore(const std::string& s) -> int

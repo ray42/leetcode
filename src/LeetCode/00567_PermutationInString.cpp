@@ -36,7 +36,7 @@ Then we can move the sliding window, counting the characters in the window!
 // rather than checking arrays of size 26.
 // We do this by keeping variable called "match", this will count how many matches there are between
 // s1 and the sliding window (on s2). If match == 26, then the count of all characters match and we are done.
-class Solution {
+class Solution567 {
 public:
     auto checkInclusion(const std::string& s1, const std::string& s2) -> bool
     {
@@ -116,7 +116,7 @@ public:
 
 
 // OKAY, so this is not optimal, it's O(26*N), let's do the optimal way, see above
-class SolutionO26N {
+class Solution567_O26N {
 public:
     auto checkInclusion(const std::string& s1, const std::string& s2) -> bool
     {
@@ -163,7 +163,7 @@ public:
 
 
 // This is meh because the logic is correct but I could have done it much better
-class SolutionMeh {
+class Solution567_Meh {
 public:
     auto checkInclusion(const std::string& s1, const std::string& s2) -> bool
     {
@@ -207,7 +207,7 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    auto aaaa = Solution{}.checkInclusion("ab", "eidbaooo");
+    auto aaaa = Solution567{}.checkInclusion("ab", "eidbaooo");
     return 0;
 }
 */

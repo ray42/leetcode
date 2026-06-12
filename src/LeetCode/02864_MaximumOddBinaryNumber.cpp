@@ -3,7 +3,7 @@
 #include <iterator>
 
 
-class Solution {
+class Solution2864 {
 public:
     std::string maximumOddBinaryNumber(std::string& s) 
     {
@@ -34,7 +34,7 @@ public:
 auto main(int argc, char* argv[]) -> int
 {
     auto str = std::string{"010"};
-    auto sss = Solution{}.maximumOddBinaryNumber(str);
+    auto sss = Solution2864{}.maximumOddBinaryNumber(str);
     return 0;
 }
 */

@@ -1,7 +1,7 @@
 
 #include <vector>
 
-class Solution {
+class Solution2149 {
 public:
     std::vector<int> rearrangeArray(const std::vector<int>& nums) 
     {
@@ -32,8 +32,8 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    //Solution{}.rearrangeArray({3,1,-2,-5,2,-4});
-    Solution{}.rearrangeArray({});
+    //Solution2149{}.rearrangeArray({3,1,-2,-5,2,-4});
+    Solution2149{}.rearrangeArray({});
     return 0;
 }
 */

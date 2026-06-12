@@ -12,7 +12,7 @@ struct ListNode {
 };
 
 using LnPtr = ListNode*;
-class Solution {
+class Solution1669 {
 public:
     ListNode* mergeInBetween(ListNode* list1, int a, int b, ListNode* list2)
     {
@@ -69,7 +69,7 @@ auto main(int argc, char* argv[])-> int
     auto b = 5;
     auto l2 = getList({1000000,1000001,1000002,1000003,1000004});
 
-    auto sss = Solution{}.mergeInBetween(l1,a,b,l2);
+    auto sss = Solution1669{}.mergeInBetween(l1,a,b,l2);
 
 
     auto iii = 42;

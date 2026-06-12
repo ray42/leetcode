@@ -15,7 +15,7 @@ We use a max heap since we want to keep track of the kth smallest only.
 
 // NOTE: This is a dumb way to do it. If we make a vector of vectors, then put the distance first, we can just use a priority queue
 // Look at NC's video if I'm not sure what I mean. Write an updated comment after I have implemented NC's solution.
-class Solution {
+class Solution973 {
 public:
 
     struct PointWithDistance
@@ -63,7 +63,7 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    auto ii = Solution{}.kClosest({{1,3},{-2,2}}, 1);
+    auto ii = Solution973{}.kClosest({{1,3},{-2,2}}, 1);
     auto iii = 42;
     return 0;
 }

@@ -12,7 +12,7 @@ struct TreeNode
 };
  
 // OKay, so this didn't work because we get an overflow due to the 2*
-//class Solution {
+//class Solution513 {
 //public:
 //    auto findBottomLeftValue(TreeNode* root) -> int
 //    {
@@ -54,7 +54,7 @@ struct TreeNode
 //};
 
 
-class Solution {
+class Solution513 {
 public:
     
     // We travel the tree level by level from right to left.
@@ -94,7 +94,7 @@ public:
 };
 
 
-class Solution2 {
+class Solution513_2 {
 public:
     int findBottomLeftValue(TreeNode* root) {
         std::queue<TreeNode*> q;
@@ -128,7 +128,7 @@ auto main(int argc, char* argv[]) -> int
     n0.left = &n1;
     n0.right = &n2;
 
-    auto ss = Solution{}.findBottomLeftValue(&n0);
+    auto ss = Solution513{}.findBottomLeftValue(&n0);
     return 0;
 }
 */

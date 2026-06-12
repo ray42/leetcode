@@ -24,7 +24,7 @@ Let's use this :)
 
 // Interesting solution from https://leetcode.com/problems/find-the-pivot-integer/solutions/4866463/beat-100-full-explanation-with-pictures/
 // if x%1 != 0 check if the value of x is not an integer.
-//class Solution {
+//class Solution2485 {
 //public:
 //    auto pivotInteger(const int n) -> int
 //    {
@@ -35,7 +35,7 @@ Let's use this :)
 //    }
 //};
 
-class Solution {
+class Solution2485 {
 public:
     auto pivotInteger(const int n) -> int
     {

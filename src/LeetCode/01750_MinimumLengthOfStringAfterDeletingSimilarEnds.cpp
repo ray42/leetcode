@@ -1,6 +1,6 @@
 #include <string>
 
-class Solution 
+class Solution1750 
 {
 public:
     auto minimumLength(const std::string& s) -> int

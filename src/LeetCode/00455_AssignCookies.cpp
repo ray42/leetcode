@@ -20,7 +20,7 @@ Answer is here, pretty good: https://leetcode.com/problems/assign-cookies/
 #include <algorithm>
 #include <cstdlib>
 
-class Solution {
+class Solution455 {
 public:
     auto findContentChildren(std::vector<int>& g, std::vector<int>& s)  -> int
     {

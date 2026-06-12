@@ -7,7 +7,7 @@ Cracking FAANG: https://www.youtube.com/watch?v=aZ_vuZxlB4I
 
 #include <vector>
 
-class Solution {
+class Solution2402 {
 public:
     auto mostBooked(int n, const std::vector<std::vector<int>>& meetings) -> int
     {

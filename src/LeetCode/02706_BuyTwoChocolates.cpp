@@ -5,7 +5,7 @@ EASY: https://leetcode.com/problems/buy-two-chocolates
 #include <vector>
 #include <algorithm>
 
-class SolutionUsingSort {
+class Solution2706_UsingSort {
 public:
     auto buyChoco(std::vector<int>& prices, int money) -> int
     {
@@ -17,7 +17,7 @@ public:
     }
 };
 
-class SolutionOnePass {
+class Solution2706_OnePass {
 public:
     auto buyChoco(std::vector<int>& prices, int money) -> int
     {

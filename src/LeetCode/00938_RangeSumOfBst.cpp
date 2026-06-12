@@ -23,7 +23,7 @@ struct TreeNode {
  };
  
 
-class Solution 
+class Solution938 
 {
 public:
     auto rangeSumBST(TreeNode* root, int low, int high) -> int

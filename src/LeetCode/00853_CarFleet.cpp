@@ -52,7 +52,7 @@ This gives rise to this algorithm:
 return the size of the stack, this is the number of car fleets.
 */
 
-class Solution
+class Solution853
 {
 public:
 
@@ -97,7 +97,7 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    auto iii = Solution{}.carFleet(100, {0,2,4}, {4,2,1});
+    auto iii = Solution853{}.carFleet(100, {0,2,4}, {4,2,1});
     auto ii = 9;
     return 0;
 }

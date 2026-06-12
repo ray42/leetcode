@@ -4,7 +4,7 @@
 
 //#include <gtest/gtest.h>
 
-class Solution {
+class Solution1002 {
 public:
     std::vector<std::string> commonChars(const std::vector<std::string>& words)
     {
@@ -36,7 +36,7 @@ public:
 
 //auto main(int argc, char* argv[]) -> int
 //{
-//    Solution{}.commonChars({"bella","label","roller"});
+//    Solution1002{}.commonChars({"bella","label","roller"});
 //    return 0;
 //}
 

@@ -8,7 +8,7 @@ EASY https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-arra
 #include <unordered_map>
 #include <iostream>
 
-class Solution {
+class Solution1287 {
 public:
     auto findSpecialInteger(const std::vector<int>& arr) -> int
     {
@@ -34,7 +34,7 @@ public:
 /*
 auto main(int argc, char * argv[]) -> int
 {
-    auto ii = Solution{}.findSpecialInteger({1,2,3,3});
+    auto ii = Solution1287{}.findSpecialInteger({1,2,3,3});
     std::cout << ii << std::endl;
     return 0;
 }

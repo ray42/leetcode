@@ -12,7 +12,7 @@ we do the same for the smallest
 */
 #include <vector>
 #include <algorithm> 
-class Solution 
+class Solution1913 
 {
 public:
     int maxProductDifference(std::vector<int>& nums) 

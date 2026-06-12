@@ -125,7 +125,7 @@ Update the time - if the heap if EMPTY, it means it means we have used up all th
 #include <queue>
 #include <ranges>
 
-class Solution {
+class Solution621 {
 public:
     int leastInterval(std::vector<char>& tasks, int n)
     {

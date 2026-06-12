@@ -44,7 +44,7 @@ Contraint 2 would allow us to use arrays indexed by str[x]-'a', where str[x] is 
 #include <array>
 #include <algorithm>
 
-class Solution {
+class Solution1657 {
 public:
     bool closeStrings(const std::string& word1, const std::string& word2)
     {

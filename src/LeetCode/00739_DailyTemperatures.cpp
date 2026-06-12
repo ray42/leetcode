@@ -4,7 +4,7 @@
 
 // The one below this is the brute force solution which exceed the time limit.
 // So, this solution uses a monotonic stack - it's much quicker.
-class Solution {
+class Solution739 {
 public:
 
     auto dailyTemperatures(const std::vector<int>& temperatures) -> std::vector<int>
@@ -50,7 +50,7 @@ public:
 
 // N^2 solution, this exceeds time limit
 // I'll use a monotonic stack, see above
-class SolutionNaiveTimeLimitExceeded {
+class Solution739_NaiveTimeLimitExceeded {
 public:
 
     auto dailyTemperatures(const std::vector<int>& temperatures) -> std::vector<int>
@@ -78,7 +78,7 @@ public:
 /*
 auto main(int argc, char* argv[]) -> int
 {
-    auto iii = Solution{}.dailyTemperatures({30,50,50,60});
+    auto iii = Solution739{}.dailyTemperatures({30,50,50,60});
     return 0;
 }
 */

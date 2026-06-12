@@ -11,7 +11,7 @@ Return an edge that can be removed so that the resulting graph is a tree of n no
 
 ############################################
 
-Solution
+Solution684
 
 Finding a redundant connection is the same finding a cycle in a loop and then returning the edge which forms the cycle.
 
@@ -67,7 +67,7 @@ Space: O( V )
 #include <stack>
 
 
-class SolutionUnionFind {
+class Solution684_UnionFind {
 public:
 
     struct UnionFind

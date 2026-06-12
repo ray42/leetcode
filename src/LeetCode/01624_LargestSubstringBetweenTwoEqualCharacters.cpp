@@ -42,7 +42,7 @@ Given this, we can store the initial positions in an array. See solution2 below.
 #include <array>
 #include <algorithm>
 
-class Solution1 {
+class Solution1624_1 {
 public:
     struct PosLen
     {
@@ -73,7 +73,7 @@ public:
     }
 };
 
-class Solution2 
+class Solution1624_2 
 {
 public:
 

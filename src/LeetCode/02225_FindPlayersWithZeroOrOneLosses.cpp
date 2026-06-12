@@ -10,7 +10,7 @@ Pretty simple...
 #include <algorithm>
 
 
-class Solution {
+class Solution2225 {
 public:
     auto findWinners(const std::vector<std::vector<int>>& matches) -> std::vector<std::vector<int>>
     {

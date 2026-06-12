@@ -36,7 +36,7 @@ if a node has at least 1 child, we calculate the height the normal way since we 
 
 // Note: I've made a slight change due to neetcode's video, on how I handle the base case and calculating the diameter.
 // But I cba to go back and correct my writing. I will correct it when I need to re-do this problem
-class Solution {
+class Solution543 {
 public:
 
     using PtrTreeNode = TreeNode*;
@@ -85,7 +85,7 @@ auto main(int argc, char* argv[]) -> int
     p2->left = p4;
     p2->right = p5;
 
-    auto ii = Solution{}.diameterOfBinaryTree(p1);
+    auto ii = Solution543{}.diameterOfBinaryTree(p1);
 
     auto iii = 42;
 

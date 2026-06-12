@@ -31,7 +31,7 @@ After each match 1 team is eliminated.
 n-1 teams needs to be eliminated: hence n-1 matches.
 */
 
-class Solution {
+class Solution1688 {
 public:
     auto numberOfMatches(const int& n) -> int
     {

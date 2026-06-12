@@ -7,7 +7,7 @@ Note: this is almost exactly the same as https://leetcode.com/problems/number-of
 #include <queue>
 #include <utility>
 
-class Solution {
+class Solution695 {
 public:
     auto maxAreaOfIsland(std::vector<std::vector<int>>& grid) -> int
     {

@@ -1,7 +1,7 @@
 #include <vector>
 #include <unordered_map>
 
-class Solution {
+class Solution1 {
 public:
     std::vector<int> twoSum(const std::vector<int>& nums, int target) const {
         
