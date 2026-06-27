@@ -49,17 +49,17 @@ LengthOfString - MaxFrequencyCharacter <= k
 
 that will give us a valid string!
 
-Once we have moved R so that that substring becomes invalid, we move L until be comes valid again.
+Once we have moved R so that the substring becomes invalid, we move L until it becomes valid again.
 
 How do we calculate MaxFrequencyCharacter? We will maintain a hash map of characters to the frequencies of the substring under consideration
-I.e. the substring 
+I.e. the substring
 BBCAABB
 L     R
 
 and so we do:
 LengthOfString - MaxFrequencyCharacter <= k
 
-where MaxFrequencyCharacter is the max number is that hash map.
+where MaxFrequencyCharacter is the max number in that hash map.
 
 ------------------------
 Note: Why, when we move the L pointer, we move it until it's valid again? What is the justification for this?
@@ -165,7 +165,7 @@ public:
 // Recall that we only need to calculate the max frequency if it changes
 class Solution424_Optimised {
 public:
-    auto characterReplacement(const std::string& s, int k) -> int
+    auto characterReplacement(const std::string& s, int k) const -> int
     {
         // So, I know that I have to start both L and R at the same place and normally, I'd do something like:
         // auto L = 0, R = 0,
