@@ -13,7 +13,7 @@ src/
 └── LeetCodeTests/
     ├── LeetCodeTests.vcxproj       # Test project (links gtest via vcpkg)
     ├── tests_main.cpp              # Google Test entry point
-    └── test_*.cpp                  # Test files
+    └── NNNNN_*Tests.cpp            # Test files
 ```
 
 ## Projects
@@ -35,7 +35,7 @@ Solutions are header-only `.hpp` files. They are compiled because `LeetCode.cpp`
 
 ## Adding a New Test File
 
-1. Create `src/LeetCodeTests/test_<name>.cpp`:
+1. Create `src/LeetCodeTests/NNNNN_ProblemNameTests.cpp`:
 
 ```cpp
 #include <gtest/gtest.h>
@@ -55,7 +55,7 @@ TEST(TwoSum, BasicCase) {
 2. Add the file to `LeetCodeTests.vcxproj` under the `<ItemGroup>` containing `<ClCompile>` entries:
 
 ```xml
-<ClCompile Include="test_<name>.cpp" />
+<ClCompile Include="NNNNN_ProblemNameTests.cpp" />
 ```
 
 3. Optionally add to `LeetCodeTests.vcxproj.filters` to keep it organized in Solution Explorer.
@@ -70,12 +70,66 @@ TEST(TwoSum, BasicCase) {
 
 ## Building on Linux
 
+### Prerequisites
+
+- GCC 12+ or Clang 15+ (for C++20 support)
+- CMake 3.20+
+- Git (for FetchContent to download Google Test)
+
+### Using build.sh
+
 From the repo root:
 
 ```bash
 chmod +x build.sh
-./build.sh        # Debug build (default)
-./build.sh Release
+./build.sh            # Debug build (default)
+./build.sh Release    # Release build
 ```
 
-This uses CMake with Google Test fetched automatically via `FetchContent`. No vcpkg needed on Linux.
+The script will:
+1. Create a `build/` directory
+2. Configure CMake with Google Test (fetched automatically via `FetchContent`)
+3. Build both the main binary and test binary
+4. Run all tests via `ctest`
+
+Output binaries:
+- `build/leetcode` — main executable (compiles all solutions)
+- `build/leetcode_tests` — test runner
+
+### Manual CMake commands
+
+```bash
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTS=ON
+cmake --build . --parallel $(nproc)
+ctest --output-on-failure
+```
+
+To build without tests:
+
+```bash
+cmake .. -DBUILD_TESTS=OFF
+cmake --build .
+```
+
+### Running specific tests
+
+After building, you can run the test binary directly with gtest filters:
+
+```bash
+# Run all tests
+./build/leetcode_tests
+
+# Run tests matching a pattern
+./build/leetcode_tests --gtest_filter="TwoSum.*"
+./build/leetcode_tests --gtest_filter="GroupAnagrams.*"
+
+# List all available tests
+./build/leetcode_tests --gtest_list_tests
+```
+
+### CI Notes
+
+- No vcpkg is needed on Linux. Google Test is downloaded at configure time via CMake `FetchContent`.
+- The same `src/LeetCodeTests/*Tests.cpp` files are compiled on both Windows (Visual Studio + vcpkg) and Linux (CMake + FetchContent).
+- All solution headers and test files are portable C++20 with no platform-specific code.
