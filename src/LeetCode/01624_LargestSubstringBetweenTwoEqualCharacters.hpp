@@ -1,3 +1,4 @@
+#pragma once
 /*
 Easy https://leetcode.com/problems/largest-substring-between-two-equal-characters/description/
 

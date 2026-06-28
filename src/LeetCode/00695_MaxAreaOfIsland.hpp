@@ -1,3 +1,4 @@
+#pragma once
 
 /*
 Note: this is almost exactly the same as https://leetcode.com/problems/number-of-islands/description/

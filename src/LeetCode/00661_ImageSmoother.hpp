@@ -1,3 +1,4 @@
+#pragma once
 /*
 EASY: https://leetcode.com/problems/image-smoother/
 

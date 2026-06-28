@@ -1,3 +1,4 @@
+#pragma once
 /*
 The kth largest element in a stream, each time we add an element, we need to return the kth largest element.
 

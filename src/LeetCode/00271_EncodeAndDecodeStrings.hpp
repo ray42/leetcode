@@ -1,3 +1,4 @@
+#pragma once
 
 
 /*
@@ -10,7 +11,7 @@ The best approach is length-prefix encoding: <number_of_characters>#<string_cont
 
 using namespace std;
 
-class Solution {
+class Solution271 {
 public:
   // Encodes a list of strings to a single string.
   string encode(vector<string>& strs) {

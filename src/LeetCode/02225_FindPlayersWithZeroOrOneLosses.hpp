@@ -1,3 +1,4 @@
+#pragma once
 /*
 Medium https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
 

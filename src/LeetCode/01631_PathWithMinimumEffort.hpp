@@ -1,3 +1,4 @@
+#pragma once
 /*
 You are a hiker preparing for an upcoming hike. 
 You are given heights, a 2D array of size rows x columns, where heights[row][col] represents the height of cell (row, col). 

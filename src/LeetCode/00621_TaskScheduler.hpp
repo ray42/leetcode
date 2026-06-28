@@ -1,3 +1,4 @@
+#pragma once
 
 /*
 You are given an array of CPU tasks, each labeled with a letter from A to Z, and a number n. 

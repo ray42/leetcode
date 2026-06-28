@@ -1,3 +1,4 @@
+#pragma once
 /*
 https://leetcode.com/problems/rotting-oranges/description/
 

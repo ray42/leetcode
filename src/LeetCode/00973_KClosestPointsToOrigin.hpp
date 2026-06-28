@@ -1,3 +1,4 @@
+#pragma once
 /*
 Basically, we need to keep track of the k smallest elements. What are the elements in this case?
 

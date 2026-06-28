@@ -1,3 +1,4 @@
+#pragma once
 /*
 You are given a network of n nodes, labeled from 1 to n. 
 You are also given times, a list of travel times as directed edges 

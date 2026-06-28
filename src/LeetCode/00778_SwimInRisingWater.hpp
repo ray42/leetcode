@@ -1,3 +1,4 @@
+#pragma once
 /*
 You are given an nxn integer matrix grid where each value grid[i][j] represents the elevation at that point (i, j).
 The rain starts to fall. At time t, the depth of the water everywhere is t. 

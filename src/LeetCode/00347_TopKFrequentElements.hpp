@@ -1,3 +1,4 @@
+#pragma once
 
 /*
 // There are four ways to approach this problem:
@@ -336,7 +337,7 @@ public:
   }
 };
 
-class Solution {
+class Solution347 {
 private:
   // Random number generator used to choose a random pivot.
   // Random pivots help avoid consistently bad partition choices.

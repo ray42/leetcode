@@ -20,6 +20,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common_types.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="00001_TwoSum.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>

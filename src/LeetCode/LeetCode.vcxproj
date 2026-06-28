@@ -130,6 +130,7 @@
     <ClCompile Include="LeetCode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common_types.hpp" />
     <ClInclude Include="00001_TwoSum.hpp" />
     <ClInclude Include="00002_AddTwoNumbers.hpp" />
     <ClInclude Include="00003_LongestSubstringWithoutRepeatingCharacters.hpp" />

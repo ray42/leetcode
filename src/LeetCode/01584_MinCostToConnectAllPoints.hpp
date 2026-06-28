@@ -1,3 +1,4 @@
+#pragma once
 /*
 You are given an array points representing integer coordinates of some points on a 2D-plane, where points[i] = [xi, yi].
 
