@@ -10,25 +10,484 @@
     <ClCompile Include="00001_TwoSumTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00002_AddTwoNumbersTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00003_LongestSubstringWithoutRepeatingCharactersTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00004_MedianOfTwoSortedArraysTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00005_LongestPalindromicSubstringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00007_ReverseIntegerTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00010_RegularExpressionMatchingTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00011_ContainerWithMostWaterTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00013_RomanToIntegerTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00014_LongestCommonPrefixTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00015_3SumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00017_LetterCombinationsOfAPhoneNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00018_4SumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00019_RemoveNthNodeFromEndOfListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00020_ValidParenthesesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00021_MergeTwoSortedListsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00022_GenerateParenthesesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00023_MergeKSortedListsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00025_ReverseNodesInKGroupTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00026_RemoveDuplicatesFromSortedArrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00027_RemoveElementTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00033_SearchInRotatedSortedArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00035_SearchInsertPositionTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00036_ValidSudokuTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00039_CombinationSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00040_CombinationSumIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00041_FirstMissingPositiveTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00042_TrappingRainWaterTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00043_MultiplyStringsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00045_JumpGameIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00046_PermutationsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00047_PermutationsIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00048_RotateImageTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00049_GroupAnagramsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00050_PowxNTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00051_NQueensTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00052_NQueensIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00053_MaximumSubarrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00054_SpiralMatrixTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00055_JumpGameTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00056_MergeIntervalsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00057_InsertIntervalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00062_UniquePathsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00063_UniquePathsIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00064_MinimumPathSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00066_PlusOneTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00067_AddBinaryTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00069_SqrtxTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00070_ClimbingStairsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00071_SimplifyPathTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00072_EditDistanceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00073_SetMatrixZeroesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00074_SearchA2DMatrixTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00075_SortColorsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00076_MinimumWindowSubstringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00077_CombinationsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00078_SubsetsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00079_WordSearchTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00081_SearchInRotatedSortedArrayIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00084_LargestRectangleInHistogramTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00088_MergeSortedArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00090_SubsetsIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00091_DecodeWaysTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00092_ReverseLinkedListIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00094_BinaryTreeInorderTraversalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00097_InterleavingStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00098_ValidateBinarySearchTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00100_SameTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00102_BinaryTreeLevelOrderTraversalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00104_MaximumDepthOfBinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00105_ConstructBinaryTreeFromPreorderAndInorderTraversalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00110_BalancedBinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00115_DistinctSubsequencesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00121_BestTimeToBuyAndSellStockTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00122_BestTimeToBuyAndSellStockIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00124_BinaryTreeMaximumPathSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00125_ValidPalindromeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00127_WordLadderTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00128_LongestConsecutiveSequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00130_SurroundedRegionsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00131_PalindromePartitioningTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00133_CloneGraphTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00134_GasStationTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00135_CandyTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00136_SingleNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00138_CopyListWithRandomPointerTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00139_WordBreakTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00140_WordBreakIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00141_LinkedListCycleTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00143_ReorderListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00144_BinaryTreePreorderTraversalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00145_BinaryTreePostorderTraversalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00146_LRUCacheTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00150_EvaluateReversePolishNotationTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00152_MaximumProductSubarrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00153_FindMinimumInRotatedSortedArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00155_MinStackTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00167_TwoSumIIInputArrayIsSortedTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00168_ExcelSheetColumnTitleTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00169_MajorityElementTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00189_RotateArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00190_ReverseBitsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00191_NumberOf1BitsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00198_HouseRobberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00199_BinaryTreeRightSideViewTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00200_NumberOfIslandsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00201_BitwiseANDOfNumbersRangeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00202_HappyNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00206_ReverseLinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00207_CourseScheduleTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00208_ImplementTriePrefixTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00209_MinimumSizeSubarraySumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00210_CourseScheduleIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00211_DesignAddAndSearchWordsDataStructureTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00212_WordSearchIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00213_HouseRobberIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00215_KthLargestElementInAnArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00219_ContainsDuplicateIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00225_ImplementStackUsingQueuesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00226_InvertBinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00229_MajorityElementIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00230_KthSmallestElementInABSTTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00232_ImplementQueueUsingStacksTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00235_LowestCommonAncestorOfABinarySearchTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00238_ProductOfArrayExceptSelfTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00239_SlidingWindowMaximumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00252_MeetingRoomTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00253_MeetingRoomsIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00261_GraphValidTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00268_MissingNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00269_AlienDictionaryTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00271_EncodeAndDecodeStringsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00279_PerfectSquaresTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00286_WallsAndGatesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00287_FindTheDuplicateNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00295_FindMedianFromDataStreamTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00297_SerializeAndDeserializeBinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00300_LongestIncreasingSubsequenceTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00304_RangeSumQuery2DImmutableTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00309_BestTimeToBuyAndSellStockWithCooldownTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00310_MinimumHeightTreesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00312_BurstBalloonsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00322_CoinChangeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00323_NumberOfConnectedComponentsInAnUndirectedGraphTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00329_LongestIncreasingPathInAMatrixTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00332_ReconstructItineraryTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00337_HouseRobberIIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00338_CountingBitsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00343_IntegerBreakTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00344_ReverseStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00347_TopKFrequentElementsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00355_DesignTwitterTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00371_SumOfTwoIntegersTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00374_GuessNumberHigherOrLowerTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00377_CombinationSumIVTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00394_DecodeStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00399_EvaluateDivisionTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00406_QueueReconstructionByHeightTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00410_SplitArrayLargestSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00413_ArithmeticSlicesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00416_PartitionEqualSubsetSumTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00417_PacificAtlanticWaterFlowTests.cpp">
@@ -37,7 +496,22 @@
     <ClCompile Include="00424_LongestRepeatingCharacterReplacementTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00427_ConstructQuadTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00428_SerializeAndDeserializeNaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00435_NonOverlappingIntervalsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00442_FindAllDuplicatesInAnArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00446_ArithmeticSlicesIiSubsequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00450_DeleteNodeInABSTTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00451_SortCharactersByFrequencyTests.cpp">
@@ -49,10 +523,46 @@
     <ClCompile Include="00455_AssignCookiesTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00460_LFUCacheTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00463_IslandPerimeterTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00473_MatchsticksToSquareTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00474_OnesAndZeroesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00480_SlidingWindowMedianTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00494_TargetSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00502_IpoTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00509_FibonacciNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00513_FindBottomLeftTreeValueTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00516_LongestPalindromicSubsequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00518_CoinChangeIiTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00525_ContiguousArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00543_DiameterOfBinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00560_SubarraySumEqualsKTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00567_PermutationInStringTests.cpp">
@@ -61,13 +571,40 @@
     <ClCompile Include="00572_SubtreeOfAnotherTreeTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00576_OutOfBoundaryPathsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00606_ConstructStringFromBinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00621_TaskSchedulerTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00622_DesignCircularQueueTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00629_KInversePairsArrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00645_SetMismatchTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00647_PalindromicSubstringsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00649_Dota2SenateTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00658_FindKClosestElementsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00661_ImageSmootherTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00678_ValidParenthesisStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00680_ValidPalindromeIITests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00682_BaseballGameTests.cpp">
@@ -79,10 +616,37 @@
     <ClCompile Include="00695_MaxAreaOfIslandTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00698_PartitionToKEqualSumSubsetsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00701_InsertIntoABinarySearchTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00703_KthLargestElementInAStreamTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00704_BinarySearchTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00705_DesignHashSetTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00706_DesignHashMapTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00707_DesignLinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00721_AccountsMergeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00724_FindPivotIndexTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00729_MyCalendarITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00735_AsteroidCollisionTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00739_DailyTemperaturesTests.cpp">
@@ -91,10 +655,34 @@
     <ClCompile Include="00743_NetworkDelayTimeTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00745_PrefixAndSuffixSearchTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00746_MinCostClimbingStairsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00752_OpenTheLockTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00763_PartitionLabelsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00767_ReorganizeStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00778_SwimInRisingWaterTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00787_CheapestFlightsWithinKStopsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00846_HandOfStraightsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00853_CarFleetTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00860_LemonadeChangeTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00867_TransposeMatrixTests.cpp">
@@ -106,13 +694,43 @@
     <ClCompile Include="00875_KokoEatingBananasTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00876_MiddleOfTheLinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00877_StoneGameTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00881_BoatsToSavePeopleTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00895_MaximumFrequencyStackTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00901_OnlineStockSpanTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00907_SumOfSubarrayMinimumsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00912_SortAnArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00918_MaximumSumCircularSubarrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00930_BinarySubarraysWithSumTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00931_MinimumFallingPathSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00938_RangeSumOfBstTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00948_MediumBagOfTokensTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00953_VerifyingAnAlienDictionaryTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00973_KClosestPointsToOriginTests.cpp">
@@ -121,25 +739,109 @@
     <ClCompile Include="00977_SquaresOfASortedArrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00978_LongestTurbulentSubarrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="00981_TimeBasedKeyValueStoreTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00983_MinimumCostForTicketsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="00992_SubarraysWithKDifferentIntegersTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="00994_RottingOrangesTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="00997_FindTheTownJudgeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="01002_FindCommonCharactersTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01011_CapacityToShipPackagesWithinDDaysTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01026_MaximumDifferenceBetweenNodeAndAncestorTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01043_PartitionArrayForMaximumSumTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01046_LastStoneWeightTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01049_LastStoneWeightIiTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01071_GreatestCommonDivisorOfStringsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01074_NumberOfSubmatricesThatSumToTargetTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01092_ShortestCommonSupersequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01094_CarPoolingTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01095_FindInMountainArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01137_NthTribonacciNumberTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01140_StoneGameIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01143_LongestCommonSubsequenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01155_NumberOfDiceRollsWithTargetSumTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01171_RemoveZeroSumConsecutiveNodesFromLinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01203_SortItemsbyGroupsRespectingDependenciesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="01207_UniqueNumberOfOccurrencesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01235_MaximumProfitInJobSchedulingTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01239_MaximumLengthOfAConcatenatedStringWithUniqueCharactersTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01249_MinimumRemoveToMakeValidParenthesesTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01287_ElementAppearingMoreThan25InSortedArrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01291_SequentialDigitsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01325_DeleteLeavesWithAGivenValueTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01335_MinimumDifficultyOfAJobScheduleTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01343_NumberOfSubArraysOfSizeKAndAverageGreaterThanOrEqualToThresholdTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01347_MinimumNumberOfStepsToMakeTwoStringsAnagramTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01405_LongestHappyStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01406_StoneGameIIITests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01422_MaximumScoreAfterSplittingAStringTests.cpp">
@@ -151,13 +853,43 @@
     <ClCompile Include="01448_CountGoodNodesInBinaryTreeTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01457_PseudoPalindromicPathsInABinaryTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="01460_MakeTwoArraysEqualByReversingSubarraysTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01462_CourseScheduleIvTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01463_HardCherryPickupIiTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01472_DesignBrowserHistoryTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01481_LeastNumberOfUniqueIntegersAfterKRemovalsTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01489_FindCriticalAndPseudoCriticalEdgesInMinimumSpanningTreeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01496_PathCrossingTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01514_PathWithMaximumProbabilityTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01531_StringCompressionIiTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="01550_ThreeConsecutiveOddsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01578_MinimumTimeToMakeRopeColorfulTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01582_SpecialPositionsInABinaryMatrixTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01584_MinCostToConnectAllPointsTests.cpp">
@@ -187,10 +919,43 @@
     <ClCompile Include="01688_CountOfMatchesInTournamentTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01700_NumberOfStudentsUnableToEatLunchTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01704_DetermineIfStringHalvesAreAlikeTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01716_CalculateMoneyInLeetcodeBankTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="01750_MinimumLengthOfStringAfterDeletingSimilarEndsTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="01758_MinimumChangesToMakeAlternatingBinaryStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01768_MergeStringsAlternatelyTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01834_SingleThreadedCPUTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01851_MinimumIntervalToIncludeEachQueryTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01863_SumOfAllSubsetXORTotalsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01871_JumpGameVIITests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="01897_RedistributeCharactersToMakeAllStringsEqualTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01899_MergeTripletsToFormTargetTripletTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="01903_LargestOddNumberInStringTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="01913_MaximumProductDifferenceBetweenTwoPairsTests.cpp">
@@ -199,7 +964,13 @@
     <ClCompile Include="01929_ConcatenationOfArrayTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02013_DetectSquaresTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="02053_KthDistinctStringInAnArrayTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02092_FindAllPeopleWithSecretTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="02108_EasyFindFirstPalindromicStringInTheArrayTests.cpp">
@@ -208,16 +979,37 @@
     <ClCompile Include="02125_NumberOfLaserBeamsInABankTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02130_MaximumTwinSumOfALinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="02149_RearrangeArrayElementsBySignTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="02225_FindPlayersWithZeroOrOneLossesTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02264_Largest3SameDigitNumberInStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="02353_DesignAFoodRatingSystemTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02385_AmountOfTimeForBinaryTreeToBeInfectedTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02392_BuildAMatrixWithConditionsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="02402_MeetingRoomsIiiTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02407_LongestIncreasingSubsequenceIiTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02444_CountSubarraysWithFixedBoundsTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02482_DifferenceBetweenOnesAndZerosInRowAndColumnTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="02485_FindThePivotIntegerTests.cpp">
@@ -229,10 +1021,34 @@
     <ClCompile Include="02706_BuyTwoChocolatesTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02707_ExtraCharactersInAStringTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02709_GreatestCommonDivisorTraversalTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02807_InsertGreatestCommonDivisorsInLinkedListTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="02864_MaximumOddBinaryNumberTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="02870_MinimumNumberOfOperationsToMakeArrayEmptyTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02958_LengthOfLongestSubarrayWithAtMostKFrequencyTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02962_CountSubarraysWhereMaxElementAppearsAtLeastKTimesTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="02966_DivideArrayIntoArraysWithMaxDifferenceTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="02971_FindPolygonWithTheLargestPerimeterTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="03133_MinimumArrayEndTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="tests_main.cpp">

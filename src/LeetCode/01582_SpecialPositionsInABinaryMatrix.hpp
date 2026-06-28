@@ -20,3 +20,7 @@ auto main(int argc, char * argv[]) -> int
     return 0;
 }
 */
+
+class Solution1582 {
+public:
+};
