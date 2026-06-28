@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Solutions are header-only (.hpp files)
-# They are included via the include path, not compiled directly.
 set(SOLUTION_INCLUDE_DIR "${CMAKE_SOURCE_DIR}/src/LeetCode")
 
 # Main executable
@@ -32,8 +31,8 @@ if(BUILD_TESTS)
     set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
     FetchContent_MakeAvailable(googletest)
 
-    # Gather all test files
-    file(GLOB TEST_SOURCES "tests/test_*.cpp")
+    # Gather all test files (same location as Visual Studio project)
+    file(GLOB TEST_SOURCES "src/LeetCodeTests/*Tests.cpp")
 
     add_executable(leetcode_tests
         ${TEST_SOURCES}
