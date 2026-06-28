@@ -9,5 +9,24 @@
 *.vcxproj.user
 .vs/
 
+# Build outputs (Visual Studio)
 src/x64/
-src/LeetCode/x64
+src/LeetCode/x64/
+src/LeetCodeTests/x64/
+src/LeetCodeTests/LeetCodeTests/
+**/x64/
+**/Debug/
+**/Release/
+
+# MSBuild intermediate files
+*.tlog
+*.log
+*.idb
+*.lastbuildstate
+*.FileListAbsolute.txt
+*.Build.CppClean.log
+*.recipe
+vcpkg.applocal.log
+
+# CMake build (Linux)
+build/

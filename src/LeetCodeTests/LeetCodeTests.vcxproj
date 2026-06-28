@@ -55,6 +55,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(VcpkgRoot)\installed\$(VcpkgTriplet)\include;..\LeetCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -73,6 +74,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <AdditionalIncludeDirectories>$(VcpkgRoot)\installed\$(VcpkgTriplet)\include;..\LeetCode;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/FS %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -82,9 +84,83 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="tests_main.cpp" />
     <ClCompile Include="00001_TwoSumTests.cpp" />
+    <ClCompile Include="00014_LongestCommonPrefixTests.cpp" />
+    <ClCompile Include="00027_RemoveElementTests.cpp" />
     <ClCompile Include="00049_GroupAnagramsTests.cpp" />
+    <ClCompile Include="00169_MajorityElementTests.cpp" />
+    <ClCompile Include="00271_EncodeAndDecodeStringsTests.cpp" />
+    <ClCompile Include="00304_RangeSumQuery2DImmutableTests.cpp" />
+    <ClCompile Include="00347_TopKFrequentElementsTests.cpp" />
+    <ClCompile Include="00417_PacificAtlanticWaterFlowTests.cpp" />
+    <ClCompile Include="00424_LongestRepeatingCharacterReplacementTests.cpp" />
+    <ClCompile Include="00442_FindAllDuplicatesInAnArrayTests.cpp" />
+    <ClCompile Include="00451_SortCharactersByFrequencyTests.cpp" />
+    <ClCompile Include="00452_MinimumNumberOfArrowsToBurstBalloonsTests.cpp" />
+    <ClCompile Include="00455_AssignCookiesTests.cpp" />
+    <ClCompile Include="00513_FindBottomLeftTreeValueTests.cpp" />
+    <ClCompile Include="00543_DiameterOfBinaryTreeTests.cpp" />
+    <ClCompile Include="00567_PermutationInStringTests.cpp" />
+    <ClCompile Include="00572_SubtreeOfAnotherTreeTests.cpp" />
+    <ClCompile Include="00621_TaskSchedulerTests.cpp" />
+    <ClCompile Include="00645_SetMismatchTests.cpp" />
+    <ClCompile Include="00661_ImageSmootherTests.cpp" />
+    <ClCompile Include="00682_BaseballGameTests.cpp" />
+    <ClCompile Include="00684_RedundantConnectionTests.cpp" />
+    <ClCompile Include="00695_MaxAreaOfIslandTests.cpp" />
+    <ClCompile Include="00703_KthLargestElementInAStreamTests.cpp" />
+    <ClCompile Include="00704_BinarySearchTests.cpp" />
+    <ClCompile Include="00739_DailyTemperaturesTests.cpp" />
+    <ClCompile Include="00743_NetworkDelayTimeTests.cpp" />
+    <ClCompile Include="00778_SwimInRisingWaterTests.cpp" />
+    <ClCompile Include="00853_CarFleetTests.cpp" />
+    <ClCompile Include="00867_TransposeMatrixTests.cpp" />
+    <ClCompile Include="00872_LeafSimilarTreesTests.cpp" />
+    <ClCompile Include="00875_KokoEatingBananasTests.cpp" />
+    <ClCompile Include="00907_SumOfSubarrayMinimumsTests.cpp" />
+    <ClCompile Include="00930_BinarySubarraysWithSumTests.cpp" />
+    <ClCompile Include="00938_RangeSumOfBstTests.cpp" />
+    <ClCompile Include="00973_KClosestPointsToOriginTests.cpp" />
+    <ClCompile Include="00977_SquaresOfASortedArrayTests.cpp" />
+    <ClCompile Include="00981_TimeBasedKeyValueStoreTests.cpp" />
+    <ClCompile Include="00994_RottingOrangesTests.cpp" />
+    <ClCompile Include="01002_FindCommonCharactersTests.cpp" />
+    <ClCompile Include="01046_LastStoneWeightTests.cpp" />
+    <ClCompile Include="01207_UniqueNumberOfOccurrencesTests.cpp" />
+    <ClCompile Include="01287_ElementAppearingMoreThan25InSortedArrayTests.cpp" />
+    <ClCompile Include="01291_SequentialDigitsTests.cpp" />
+    <ClCompile Include="01422_MaximumScoreAfterSplittingAStringTests.cpp" />
+    <ClCompile Include="01436_DestinationCityTests.cpp" />
+    <ClCompile Include="01448_CountGoodNodesInBinaryTreeTests.cpp" />
+    <ClCompile Include="01460_MakeTwoArraysEqualByReversingSubarraysTests.cpp" />
+    <ClCompile Include="01481_LeastNumberOfUniqueIntegersAfterKRemovalsTests.cpp" />
+    <ClCompile Include="01550_ThreeConsecutiveOddsTests.cpp" />
+    <ClCompile Include="01584_MinCostToConnectAllPointsTests.cpp" />
+    <ClCompile Include="01609_EvenOddTreeTests.cpp" />
+    <ClCompile Include="01624_LargestSubstringBetweenTwoEqualCharactersTests.cpp" />
+    <ClCompile Include="01631_PathWithMinimumEffortTests.cpp" />
+    <ClCompile Include="01637_WidestVerticalAreaBetweenTwoPointsContainingNoPointsntsTests.cpp" />
+    <ClCompile Include="01642_FurthestBuildingYouCanReachTests.cpp" />
+    <ClCompile Include="01657_DetermineIfTwoStringsAreCloseTests.cpp" />
+    <ClCompile Include="01669_MergeInBetweenLinkedListsTests.cpp" />
+    <ClCompile Include="01688_CountOfMatchesInTournamentTests.cpp" />
+    <ClCompile Include="01750_MinimumLengthOfStringAfterDeletingSimilarEndsTests.cpp" />
+    <ClCompile Include="01897_RedistributeCharactersToMakeAllStringsEqualTests.cpp" />
+    <ClCompile Include="01913_MaximumProductDifferenceBetweenTwoPairsTests.cpp" />
+    <ClCompile Include="01929_ConcatenationOfArrayTests.cpp" />
+    <ClCompile Include="02053_KthDistinctStringInAnArrayTests.cpp" />
+    <ClCompile Include="02108_EasyFindFirstPalindromicStringInTheArrayTests.cpp" />
+    <ClCompile Include="02125_NumberOfLaserBeamsInABankTests.cpp" />
+    <ClCompile Include="02149_RearrangeArrayElementsBySignTests.cpp" />
+    <ClCompile Include="02225_FindPlayersWithZeroOrOneLossesTests.cpp" />
+    <ClCompile Include="02353_DesignAFoodRatingSystemTests.cpp" />
+    <ClCompile Include="02402_MeetingRoomsIiiTests.cpp" />
+    <ClCompile Include="02485_FindThePivotIntegerTests.cpp" />
+    <ClCompile Include="02610_ConvertAnArrayIntoA2dArrayWithConditionsTests.cpp" />
+    <ClCompile Include="02706_BuyTwoChocolatesTests.cpp" />
+    <ClCompile Include="02864_MaximumOddBinaryNumberTests.cpp" />
+    <ClCompile Include="02971_FindPolygonWithTheLargestPerimeterTests.cpp" />
+    <ClCompile Include="tests_main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
