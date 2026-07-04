@@ -22,8 +22,8 @@ E.g. Let pos = [0, 2, 4], speed = [0.5, 1, 0.5]
 What can we deduce from the the above diagram?
 
 1) Only lower position can form a fleet with higher positions.
-2) if the current car does not form a fleet with the one above it, it means
-      the current car is slower than all cars above it and now forms a new line where cars lower than it can form a fleet with it.
+2) if the current car does not form a fleet with the one above it, it means:
+      The current car is slower than (or equal to) all cars above it and now forms a new line where cars lower than it can form a fleet with it.
       Only if we find a car reaching the finish line at a later time than the current car that it becomes the new line which we compare to.
 
 But how do we know if two cars will form a fleet? 
@@ -38,7 +38,7 @@ So if we have a car at p = 1, s = 2 and target is 10, what time would it reach t
 Formula is t = (target - p)/s = 4.5
 
 Say two cars C1 and C2, with C2 below C1. How do we know if C2 collides with C1?
-Well, C2 wil collide with C1 if it reaches the target at a smaller time t than C1.
+Well, C2 will collide with C1 if it reaches the target at a smaller time t than C1.
 
 This gives rise to this algorithm:
 
