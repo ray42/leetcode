@@ -53,47 +53,90 @@ This gives rise to this algorithm:
 return the size of the stack, this is the number of car fleets.
 */
 
-class Solution853
-{
+
+class Solution853 {
+  struct Car {
+    int position;
+    int speed;
+
+    auto operator<=>(const Car&) const = default;
+
+  };
 public:
+  int carFleet(int target, const std::vector<int>& position, const std::vector<int>& speed) const {
 
-    auto carFleet(int target, const std::vector<int>& position, const std::vector<int>& speed) -> int
+    const auto numCar = std::ssize(position);
+
+    // Sort the position and speed vector based on speed.
+    auto car = std::vector<Car>{};
+    car.reserve(numCar);
+    for (auto i = 0; i < numCar; ++i)
     {
-        // Need to sort by position
-        auto posAndSpeeds = std::vector<std::pair<int,int>>{};
-        for(auto i = 0; i < position.size(); ++i)
-        {
-            posAndSpeeds.emplace_back(position[i], speed[i]);
-        }
-        
-        std::sort(posAndSpeeds.begin(), posAndSpeeds.end(), [](const std::pair<int, int>& lhs, const std::pair<int, int>& rhs){
-            return lhs.first < rhs.first;
-        });
-
-        // Insert the last element to first
-        auto carFleets = std::stack<std::pair<int,int>>{};
-        carFleets.emplace(posAndSpeeds[posAndSpeeds.size() - 1]);
-
-        // Now we go from second last right to left
-        for(int i = posAndSpeeds.size()-2; i >= 0; --i)
-        {
-            // Check the top of the stack
-            const auto& top = carFleets.top();
-
-            // If the top reaches the target BEFORE the current car, then the current car can never
-            // reach top to form a car fleet. The current car becomes the slowest car which other cars
-            // can form a car fleet with.
-            // If the current car can reach the finish line before the top, then it means they will become a 
-            // car fleet and we do nothing with the current car.
-            if((target - top.first)/static_cast<double>(top.second) < (target - posAndSpeeds[i].first)/static_cast<double>(posAndSpeeds[i].second))
-            {
-                carFleets.push(posAndSpeeds[i]);
-            }
-        }
-
-        return carFleets.size();
+      car.emplace_back(position[i], speed[i]);
     }
+
+    std::ranges::sort(car);
+
+    // Work backwards, when ever we encounter a new maxima of the suffix array, 
+    // increment the number of car fleets.
+    auto slowestTimetoReachTarget = 0.0;
+    auto nCarFleet = 0;
+
+    for (auto riter = car.rbegin(); riter != car.rend(); ++riter)
+    {
+      auto timeToTarget = (target - riter->position) / static_cast<double>(riter->speed);
+      if (timeToTarget > slowestTimetoReachTarget)
+      {
+        ++nCarFleet;
+        slowestTimetoReachTarget = timeToTarget;
+      }
+    }
+
+    return nCarFleet;
+  }
 };
+
+//class Solution853
+//{
+//public:
+//
+//    auto carFleet(int target, const std::vector<int>& position, const std::vector<int>& speed) -> int
+//    {
+//        // Need to sort by position
+//        auto posAndSpeeds = std::vector<std::pair<int,int>>{};
+//        for(auto i = 0; i < position.size(); ++i)
+//        {
+//            posAndSpeeds.emplace_back(position[i], speed[i]);
+//        }
+//        
+//        std::sort(posAndSpeeds.begin(), posAndSpeeds.end(), [](const std::pair<int, int>& lhs, const std::pair<int, int>& rhs){
+//            return lhs.first < rhs.first;
+//        });
+//
+//        // Insert the last element to first
+//        auto carFleets = std::stack<std::pair<int,int>>{};
+//        carFleets.emplace(posAndSpeeds[posAndSpeeds.size() - 1]);
+//
+//        // Now we go from second last right to left
+//        for(int i = posAndSpeeds.size()-2; i >= 0; --i)
+//        {
+//            // Check the top of the stack
+//            const auto& top = carFleets.top();
+//
+//            // If the top reaches the target BEFORE the current car, then the current car can never
+//            // reach top to form a car fleet. The current car becomes the slowest car which other cars
+//            // can form a car fleet with.
+//            // If the current car can reach the finish line before the top, then it means they will become a 
+//            // car fleet and we do nothing with the current car.
+//            if((target - top.first)/static_cast<double>(top.second) < (target - posAndSpeeds[i].first)/static_cast<double>(posAndSpeeds[i].second))
+//            {
+//                carFleets.push(posAndSpeeds[i]);
+//            }
+//        }
+//
+//        return carFleets.size();
+//    }
+//};
 
 /*
 auto main(int argc, char* argv[]) -> int
