@@ -3,5 +3,7 @@
 
 TEST(SimplifyPath, Placeholder) {
     // TODO: Add test cases for Solution71
-    EXPECT_TRUE(true);
+  auto solution = Solution71{};
+  auto result = solution.simplifyPath(std::string{ "/home/" });
+  EXPECT_EQ(result, "/home");
 }
