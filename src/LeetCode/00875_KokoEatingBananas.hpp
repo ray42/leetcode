@@ -77,9 +77,9 @@ public:
             //});
             
             // Or I could have done this. lol
-            auto hours = std::accumulate(piles.begin(), piles.end(), ll{}, [&](ll currentSum, ll pi)
+            auto hours = std::accumulate(piles.begin(), piles.end(), ll{}, [&](ll currentSum, ll currentPile)
             {
-                return currentSum + static_cast<ll>(std::ceil(pi/static_cast<double>(M)));
+                return currentSum + static_cast<ll>(std::ceil(currentPile /static_cast<double>(M)));
             });
             
             if(hours > h)

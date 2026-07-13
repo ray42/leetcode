@@ -11,8 +11,8 @@
 class Solution84_intuitiveSolution
 {
 public:
-  int largestRectangleArea(vector<int>& heights) const {
-    stack<int> st;       // Indices of non-decreasing bar heights.
+  int largestRectangleArea(std::vector<int>& heights) const {
+    std::stack<int> st;       // Indices of non-decreasing bar heights.
     long long best = 0;
     auto n = std::ssize(heights);
 
@@ -49,7 +49,7 @@ public:
 
         long long area =
           static_cast<long long>(heights[mid]) * width;
-        best = max(best, area);
+        best = std::max(best, area);
       }
 
       // Do not push the virtual sentinel index because heights[n]
